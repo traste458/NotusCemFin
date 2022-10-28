@@ -1,0 +1,1068 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.logytechmobile.com/SIDWService/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.logytechmobile.com/SIDWService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebService que provee los procedimientos y funciones necesarios para llevar a cabo la sincronización de información de despachos</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.logytechmobile.com/SIDWService/">
+      <s:element name="RegistrarDestinatarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoSucursal" type="tns:WsSucursal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsSucursal">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdSucursal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCiudad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreContacto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Centro" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Almacen" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Codigo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCanal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPadre" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdClienteNotus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdDestinatarioNotus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="tns:EstadoSucursal" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EstadoSucursal">
+        <s:restriction base="s:string">
+          <s:enumeration value="Activo" />
+          <s:enumeration value="Bloqueado" />
+          <s:enumeration value="Inactivo" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="RegistrarDestinatariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarDestinatariosResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultadoProceso">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActualizaDestinatarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoSucursal" type="tns:WsSucursal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaDestinatariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizaDestinatariosResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerIdSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idDestinatario" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSucursal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerIdSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerIdSucursalResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSucursal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SincronizarPedidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoDespacho" type="tns:ArrayOfWsInfoDespacho" />
+            <s:element minOccurs="0" maxOccurs="1" name="detalleDespacho" type="tns:ArrayOfWsDetalleDespacho" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWsInfoDespacho">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WsInfoDespacho" nillable="true" type="tns:WsInfoDespacho" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WsInfoDespacho">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdDespacho" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPedido" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTransportadora" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Guia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaDespacho" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodigoDestinatario" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoPedido" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCampania" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWsDetalleDespacho">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WsDetalleDespacho" nillable="true" type="tns:WsDetalleDespacho" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WsDetalleDespacho">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdDespacho" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Material" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SincronizarPedidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SincronizarPedidosResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarEntregasNovedad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoFiltros" type="tns:WsGestionNovedades" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsGestionNovedades">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ListaCampania" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaCanal" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaDestinataio" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaCiudad" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaGuia" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaEstado" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="tns:EstadoNovedad" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaResponsableGestion" type="tns:ArrayOfResponsableGestionNovedad" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaPerfilesNotus" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaPedido" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoPedido" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="EstadoNovedad">
+        <s:restriction base="s:string">
+          <s:enumeration value="Registrado" />
+          <s:enumeration value="AsignadoGestion" />
+          <s:enumeration value="Gestionado" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfResponsableGestionNovedad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ResponsableGestionNovedad" type="tns:ResponsableGestionNovedad" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ResponsableGestionNovedad">
+        <s:restriction base="s:string">
+          <s:enumeration value="Cliente_Externo" />
+          <s:enumeration value="Logytech_Mobile" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ConsultarEntregasNovedadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarEntregasNovedadResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTipoClasificacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarTipoClasificacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarTipoClasificacionResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarEntregaNovedad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InfoEntregaNovedad" type="tns:WsEntregaNovedad" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsEntregaNovedad">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdNovedad" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListIdNovedad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdNovedadCarga" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroEntrega" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="NumeroGuia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescrpcionNovedad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacionNovedad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaTransportadora" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="tns:EstadoNovedad" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdClasificacion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuarioModifica" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaClasificacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoSolucion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuarioSolucion" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaSolucion" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ModificarEntregaNovedadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarEntregaNovedadResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaReporteNovedad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoReporte" type="tns:WsReporteNovedades" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsReporteNovedades">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ListaPedidos" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaCampania" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaGuia" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaTrasportadora" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaEstado" type="tns:ArrayOfEstadoNovedad" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoPedido" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEstadoNovedad">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EstadoNovedad" type="tns:EstadoNovedad" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaReporteNovedadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaReporteNovedadResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaPedidoGenerales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoBusqueda" type="tns:WsBusquedaPedidos" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsBusquedaPedidos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ListaPedidos" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPedido" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCampania" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoDestinatario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCiudadDestino" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTransportadora" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Guia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remision" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Novedad" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoFecha" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaPedidoGeneralesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaPedidoGeneralesResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDetalleNovedadGestionada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPedido" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsDetalle">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaDetalleNovedadGestionadaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaDetalleNovedadGestionadaResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsDetalle">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarEntrega">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InfoEntrega" type="tns:WsEntrega" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsEntrega">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NumeroEntrega" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTransportadora" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdOrigen" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Guia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCreador" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdSucursal" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaDespacho" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaEsperadaEntrega" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaConfirmacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaRecepcion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaEntrega" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="idUsuarioConfirma" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idEstado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="idTipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fechaSAP" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="origenConfirmacion" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidadTelefono" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidadSim" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidadTarjeta" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cantidadOtros" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="entregado" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="idEstadoTransporte" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="idEstadoNovedad" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoPedido" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdOrigenCargue" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCampania" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPedido" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdDestinatario" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ModificarEntregaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarEntregaResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaClasificacionInterna">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoReporte" type="tns:WsConsultaClasificacionInterna" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsDatos">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsConsultaClasificacionInterna">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ListaClasificacion" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaEstado" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaResponsableGestion" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaClasificacionInternaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaClasificacionInternaResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsDatos">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarClasificacionInterna">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoClasificacion" type="tns:WsClasificacionInterna" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsClasificacionInterna">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdClasificacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaCreacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Estado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreEstado" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdResponsableGestion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponsableGestion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuarioRegistro" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarClasificacionInternaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarClasificacionInternaResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaClasificacionInterna">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoClasificacion" type="tns:WsClasificacionInterna" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaClasificacionInternaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizaClasificacionInternaResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaResponsableGestion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dsResponsable">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultaResponsableGestionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaResponsableGestionResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsResponsable">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarReportePorcetajeNovedad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoReporte" type="tns:WsReportePorcentajeNovedades" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsReportePorcentajeNovedades">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ListaCampania" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaCiudad" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaCanal" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TipoFecha" type="tns:TipoFecha" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TipoFecha">
+        <s:restriction base="s:string">
+          <s:enumeration value="creacion" />
+          <s:enumeration value="atencion" />
+          <s:enumeration value="entrega" />
+          <s:enumeration value="novedad" />
+          <s:enumeration value="solucion" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ConsultarReportePorcetajeNovedadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarReportePorcetajeNovedadResult" type="tns:ResultadoProceso" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsReporte">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistrarDestinatariosSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarDestinatarios" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDestinatariosSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarDestinatariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaDestinatariosSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaDestinatarios" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaDestinatariosSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaDestinatariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerIdSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerIdSucursal" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerIdSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerIdSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SincronizarPedidosSoapIn">
+    <wsdl:part name="parameters" element="tns:SincronizarPedidos" />
+  </wsdl:message>
+  <wsdl:message name="SincronizarPedidosSoapOut">
+    <wsdl:part name="parameters" element="tns:SincronizarPedidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarEntregasNovedadSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarEntregasNovedad" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarEntregasNovedadSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarEntregasNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTipoClasificacionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoClasificacion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarTipoClasificacionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarTipoClasificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarEntregaNovedadSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarEntregaNovedad" />
+  </wsdl:message>
+  <wsdl:message name="ModificarEntregaNovedadSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarEntregaNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaReporteNovedadSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaReporteNovedad" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaReporteNovedadSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaReporteNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPedidoGeneralesSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaPedidoGenerales" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaPedidoGeneralesSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaPedidoGeneralesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDetalleNovedadGestionadaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaDetalleNovedadGestionada" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaDetalleNovedadGestionadaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaDetalleNovedadGestionadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarEntregaSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarEntrega" />
+  </wsdl:message>
+  <wsdl:message name="ModificarEntregaSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarEntregaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClasificacionInternaSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaClasificacionInterna" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaClasificacionInternaSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaClasificacionInternaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarClasificacionInternaSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarClasificacionInterna" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarClasificacionInternaSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarClasificacionInternaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaClasificacionInternaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaClasificacionInterna" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaClasificacionInternaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaClasificacionInternaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaResponsableGestionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaResponsableGestion" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaResponsableGestionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaResponsableGestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarReportePorcetajeNovedadSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarReportePorcetajeNovedad" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarReportePorcetajeNovedadSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarReportePorcetajeNovedadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SIDServiceSoap">
+    <wsdl:operation name="RegistrarDestinatarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite registrar una sucursal</wsdl:documentation>
+      <wsdl:input message="tns:RegistrarDestinatariosSoapIn" />
+      <wsdl:output message="tns:RegistrarDestinatariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaDestinatarios">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite actualizar una sucursal</wsdl:documentation>
+      <wsdl:input message="tns:ActualizaDestinatariosSoapIn" />
+      <wsdl:output message="tns:ActualizaDestinatariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIdSucursal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar el idSucursal a partir del idDestinatario</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerIdSucursalSoapIn" />
+      <wsdl:output message="tns:ObtenerIdSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarPedidos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite sincronizar los pedidos despachados</wsdl:documentation>
+      <wsdl:input message="tns:SincronizarPedidosSoapIn" />
+      <wsdl:output message="tns:SincronizarPedidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEntregasNovedad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar las guías con novedades</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarEntregasNovedadSoapIn" />
+      <wsdl:output message="tns:ConsultarEntregasNovedadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoClasificacion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar los tipos de clasificaciones</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarTipoClasificacionSoapIn" />
+      <wsdl:output message="tns:ConsultarTipoClasificacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarEntregaNovedad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite modificar las novedades registradas</wsdl:documentation>
+      <wsdl:input message="tns:ModificarEntregaNovedadSoapIn" />
+      <wsdl:output message="tns:ModificarEntregaNovedadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaReporteNovedad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar las novedades Gestionadas en el sistema</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaReporteNovedadSoapIn" />
+      <wsdl:output message="tns:ConsultaReporteNovedadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPedidoGenerales">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar los pedidos Gestionados en el sistema</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaPedidoGeneralesSoapIn" />
+      <wsdl:output message="tns:ConsultaPedidoGeneralesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDetalleNovedadGestionada">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar  el detalle de las novedades Gestionadas en el sistema</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaDetalleNovedadGestionadaSoapIn" />
+      <wsdl:output message="tns:ConsultaDetalleNovedadGestionadaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarEntrega">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite modificar las entregas registradas</wsdl:documentation>
+      <wsdl:input message="tns:ModificarEntregaSoapIn" />
+      <wsdl:output message="tns:ModificarEntregaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaClasificacionInterna">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar los tipos de clasificaciones</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaClasificacionInternaSoapIn" />
+      <wsdl:output message="tns:ConsultaClasificacionInternaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarClasificacionInterna">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite registrar una clasificación interna</wsdl:documentation>
+      <wsdl:input message="tns:RegistrarClasificacionInternaSoapIn" />
+      <wsdl:output message="tns:RegistrarClasificacionInternaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaClasificacionInterna">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite actualizar una clasificación interna</wsdl:documentation>
+      <wsdl:input message="tns:ActualizaClasificacionInternaSoapIn" />
+      <wsdl:output message="tns:ActualizaClasificacionInternaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaResponsableGestion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar los responsables de gestión</wsdl:documentation>
+      <wsdl:input message="tns:ConsultaResponsableGestionSoapIn" />
+      <wsdl:output message="tns:ConsultaResponsableGestionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReportePorcetajeNovedad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite consultar el reporte porentaje novedades</wsdl:documentation>
+      <wsdl:input message="tns:ConsultarReportePorcetajeNovedadSoapIn" />
+      <wsdl:output message="tns:ConsultarReportePorcetajeNovedadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SIDServiceSoap" type="tns:SIDServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarDestinatarios">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/RegistrarDestinatarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaDestinatarios">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ActualizaDestinatarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIdSucursal">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ObtenerIdSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarPedidos">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/SincronizarPedidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEntregasNovedad">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultarEntregasNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoClasificacion">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultarTipoClasificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarEntregaNovedad">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ModificarEntregaNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaReporteNovedad">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaReporteNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPedidoGenerales">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaPedidoGenerales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDetalleNovedadGestionada">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaDetalleNovedadGestionada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarEntrega">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ModificarEntrega" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaClasificacionInterna">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaClasificacionInterna" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarClasificacionInterna">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/RegistrarClasificacionInterna" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaClasificacionInterna">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ActualizaClasificacionInterna" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaResponsableGestion">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaResponsableGestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReportePorcetajeNovedad">
+      <soap:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultarReportePorcetajeNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SIDServiceSoap12" type="tns:SIDServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarDestinatarios">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/RegistrarDestinatarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaDestinatarios">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ActualizaDestinatarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerIdSucursal">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ObtenerIdSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SincronizarPedidos">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/SincronizarPedidos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEntregasNovedad">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultarEntregasNovedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarTipoClasificacion">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultarTipoClasificacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarEntregaNovedad">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ModificarEntregaNovedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaReporteNovedad">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaReporteNovedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPedidoGenerales">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaPedidoGenerales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDetalleNovedadGestionada">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaDetalleNovedadGestionada" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarEntrega">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ModificarEntrega" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaClasificacionInterna">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaClasificacionInterna" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarClasificacionInterna">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/RegistrarClasificacionInterna" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaClasificacionInterna">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ActualizaClasificacionInterna" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaResponsableGestion">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultaResponsableGestion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarReportePorcetajeNovedad">
+      <soap12:operation soapAction="http://www.logytechmobile.com/SIDWService/ConsultarReportePorcetajeNovedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SIDService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">WebService que provee los procedimientos y funciones necesarios para llevar a cabo la sincronización de información de despachos</wsdl:documentation>
+    <wsdl:port name="SIDServiceSoap" binding="tns:SIDServiceSoap">
+      <soap:address location="http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SIDServiceSoap12" binding="tns:SIDServiceSoap12">
+      <soap12:address location="http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

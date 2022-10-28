@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ILSBusinessLayer.Inventario.ItemBodegaSatelite" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EkCAYKQVIQk4AEYAEEAjKQAAAJACCATiOAAAIQiSBEU=</HashCode>
+      <FileName>Inventario\ItemBodegaSatelite.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.InventarioBodegaPrincipalColeccion" Collapsed="true">
+    <Position X="3.75" Y="4" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AkAAgKAQIAsAAQZSAEFDMQAAAJAAwAKADAAICYiABgA=</HashCode>
+      <FileName>Inventario\InventarioBodegaPrincipalColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.InventarioBodegaSateliteColeccion" Collapsed="true">
+    <Position X="0.5" Y="4" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AkAAgKAQIAsAAQZSAEFDMQAAAJAAwAKADAAICYiABgA=</HashCode>
+      <FileName>Inventario\InventarioBodegaSateliteColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.ItemBodegaPrincipal" Collapsed="true">
+    <Position X="3.75" Y="3" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EkAAIKQVIQk4AEYAAEAhKQEAAJACCATiOAAAIQiSBAU=</HashCode>
+      <FileName>Inventario\ItemBodegaPrincipal.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.BloqueoInventario" Collapsed="true">
+    <Position X="4" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAQAwACCAAAAABECACQKAgAAAQAABICQAQCgQAY=</HashCode>
+      <FileName>Inventario\BloqueoInventario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.DetalleProductoBloqueo" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EEAAACEhAAAAAAAACBAAAAAAAgAAAAAACIAAIAAAAAQ=</HashCode>
+      <FileName>Inventario\DetalleProductoBloqueo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.DetalleProductoBloqueoColeccion" Collapsed="true">
+    <Position X="9.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AkAAACAAAAAAAABAAFFAMAAAAIAAAAAAAIAIAAAAAAA=</HashCode>
+      <FileName>Inventario\DetalleProductoBloqueoColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.DetalleSerialBloqueo" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAhAAAAAAAACBAAIAAAABAIAACAAIAAIAAAAAQ=</HashCode>
+      <FileName>Inventario\DetalleSerialBloqueo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.DetalleSerialBloqueoColeccion" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAABAAFFAMAAAAJAAAACAAIAIAAAAAAA=</HashCode>
+      <FileName>Inventario\DetalleSerialBloqueoColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

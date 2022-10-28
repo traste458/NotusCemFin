@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx?wsdl" docRef="http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx" xmlns:q1="http://www.logytechmobile.com/SIDWService/" binding="q1:SIDServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx" xmlns:q2="http://www.logytechmobile.com/SIDWService/" binding="q2:SIDServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

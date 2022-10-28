@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="LMWebServiceSyncMonitorBussinessLayer_SAPPoolPedidos_WS_PEDIDOS_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsappro01:50000/WS_PEDIDOS_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="LMWebServiceSyncMonitorBussinessLayer_SAPMaestroMateriales_WS_MAESTRO_MATERIAL_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsappro01:50000/WS_MAESTRO_MATERIAL_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="LMWebServiceSyncMonitorBussinessLayer_SAPMaestroAlmacenes_WS_MAESTRO_CENTRO_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsappro01:50000/WS_MAESTRO_CENTRO_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="LMWebServiceSyncMonitorBussinessLayer_SAPMaestroDestinatarios_WS_MAESTRO_DESTINATARIO_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsappro01:50000/WS_MAESTRO_DESTINATARIO_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="LMWebServiceSyncMonitorBusinessLayer_SAPMaestroListaPrecio_WS_MAESTRO_LPRECIOS_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsappro01:50000/WS_MAESTRO_LPRECIOS_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="LMWebServiceSyncMonitorBusinessLayer_SAPConsultarInventario_WS_INVENTARIO_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://wsappro01:50000/WS_INVENTARIO_LG/Config1?style=document</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

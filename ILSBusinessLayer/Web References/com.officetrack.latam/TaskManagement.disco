@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://latam.officetrack.com/services/TaskManagement.asmx?wsdl" docRef="https://latam.officetrack.com/services/TaskManagement.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://latam.officetrack.com/services/TaskManagement.asmx" xmlns:q1="Trackem.Web.Services" binding="q1:TaskManagementSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://latam.officetrack.com/services/TaskManagement.asmx" xmlns:q2="Trackem.Web.Services" binding="q2:TaskManagementSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

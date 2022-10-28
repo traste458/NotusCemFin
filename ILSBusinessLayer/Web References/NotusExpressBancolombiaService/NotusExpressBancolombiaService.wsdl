@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ActualizaGestionVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoGestion" type="tns:WsGestionVenta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsGestionVenta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdGestionVenta" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCliente" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdResultadoProceso" type="tns:ResuladoProcesoVenta" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="tns:EstadosGestionDeVenta" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacionCallCenter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacionVendedor" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaRecepcionDocumentos" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdReceptorDocumento" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaLegalizacion" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdLegalizador" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EsNovedad" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacionDeclinar" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdNovedad" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObservacionNovedad" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCampaniaNotus" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdServicioNotus" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdModificador" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaAgenda" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstadoServicioMensajeria" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListaNovedades" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ResuladoProcesoVenta">
+        <s:restriction base="s:string">
+          <s:enumeration value="Aprobada" />
+          <s:enumeration value="Negada" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="EstadosGestionDeVenta">
+        <s:restriction base="s:string">
+          <s:enumeration value="RegistroParcial" />
+          <s:enumeration value="Registrada" />
+          <s:enumeration value="VentaDeclinada" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ResultadoProceso">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensaje" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ActualizaGestionVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizaGestionVentaResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraSerialGestionVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idServicio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="dsDatos">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraSerialGestionVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraSerialGestionVentaResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraCampania">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoCampania" type="tns:WsRegistroCampania" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WsRegistroCampania">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdCampania" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaInicio" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Activo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListCiudades" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListBodegas" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListProductoExterno" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListDocumentoFinanciero" type="tns:ArrayOfInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListTiposDeServicio" type="tns:ArrayOfInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdClienteExterno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipoCampania" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdSistema" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistraCampaniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraCampaniaResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaCampania">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="infoCampania" type="tns:WsRegistroCampania" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizaCampaniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActualizaCampaniaResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AsignarMotorizado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idServicio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cedulaMotorizado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nombresApellidosMotorizado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AsignarMotorizadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AsignarMotorizadoResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearNovedadCem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idNovedad" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idServicio" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuarioRegistra" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CrearNovedadCemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CrearNovedadCemResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AsignacionNovedad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idServicio" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="novedad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AsignacionNovedadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AsignacionNovedadResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraSerialInventario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listSeriales" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistraSerialInventarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistraSerialInventarioResult" type="tns:ResultadoProceso" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ActualizaGestionVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaGestionVenta" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaGestionVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaGestionVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraSerialGestionVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraSerialGestionVenta" />
+  </wsdl:message>
+  <wsdl:message name="RegistraSerialGestionVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraSerialGestionVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraCampaniaSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraCampania" />
+  </wsdl:message>
+  <wsdl:message name="RegistraCampaniaSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraCampaniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaCampaniaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizaCampania" />
+  </wsdl:message>
+  <wsdl:message name="ActualizaCampaniaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizaCampaniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AsignarMotorizadoSoapIn">
+    <wsdl:part name="parameters" element="tns:AsignarMotorizado" />
+  </wsdl:message>
+  <wsdl:message name="AsignarMotorizadoSoapOut">
+    <wsdl:part name="parameters" element="tns:AsignarMotorizadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CrearNovedadCemSoapIn">
+    <wsdl:part name="parameters" element="tns:CrearNovedadCem" />
+  </wsdl:message>
+  <wsdl:message name="CrearNovedadCemSoapOut">
+    <wsdl:part name="parameters" element="tns:CrearNovedadCemResponse" />
+  </wsdl:message>
+  <wsdl:message name="AsignacionNovedadSoapIn">
+    <wsdl:part name="parameters" element="tns:AsignacionNovedad" />
+  </wsdl:message>
+  <wsdl:message name="AsignacionNovedadSoapOut">
+    <wsdl:part name="parameters" element="tns:AsignacionNovedadResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraSerialInventarioSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistraSerialInventario" />
+  </wsdl:message>
+  <wsdl:message name="RegistraSerialInventarioSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraSerialInventarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NotusExpressBancolombiaServiceSoap">
+    <wsdl:operation name="ActualizaGestionVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite modificar una gestión de venta</wsdl:documentation>
+      <wsdl:input message="tns:ActualizaGestionVentaSoapIn" />
+      <wsdl:output message="tns:ActualizaGestionVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraSerialGestionVenta">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite registrar los seriales de una gestión de venta</wsdl:documentation>
+      <wsdl:input message="tns:RegistraSerialGestionVentaSoapIn" />
+      <wsdl:output message="tns:RegistraSerialGestionVentaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraCampania">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite registrar una campania</wsdl:documentation>
+      <wsdl:input message="tns:RegistraCampaniaSoapIn" />
+      <wsdl:output message="tns:RegistraCampaniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCampania">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite actualizar una campania</wsdl:documentation>
+      <wsdl:input message="tns:ActualizaCampaniaSoapIn" />
+      <wsdl:output message="tns:ActualizaCampaniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignarMotorizado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo publico que asignar un motorizado a la gestion de venta</wsdl:documentation>
+      <wsdl:input message="tns:AsignarMotorizadoSoapIn" />
+      <wsdl:output message="tns:AsignarMotorizadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearNovedadCem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo publico que crear una novedad</wsdl:documentation>
+      <wsdl:input message="tns:CrearNovedadCemSoapIn" />
+      <wsdl:output message="tns:CrearNovedadCemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignacionNovedad">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo publico asignacion de novedad.</wsdl:documentation>
+      <wsdl:input message="tns:AsignacionNovedadSoapIn" />
+      <wsdl:output message="tns:AsignacionNovedadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraSerialInventario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Función que permite registrar los seriales del inventario</wsdl:documentation>
+      <wsdl:input message="tns:RegistraSerialInventarioSoapIn" />
+      <wsdl:output message="tns:RegistraSerialInventarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NotusExpressBancolombiaServiceSoap" type="tns:NotusExpressBancolombiaServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActualizaGestionVenta">
+      <soap:operation soapAction="http://tempuri.org/ActualizaGestionVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraSerialGestionVenta">
+      <soap:operation soapAction="http://tempuri.org/RegistraSerialGestionVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraCampania">
+      <soap:operation soapAction="http://tempuri.org/RegistraCampania" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCampania">
+      <soap:operation soapAction="http://tempuri.org/ActualizaCampania" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarMotorizado">
+      <soap:operation soapAction="http://tempuri.org/AsignarMotorizado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearNovedadCem">
+      <soap:operation soapAction="http://tempuri.org/CrearNovedadCem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignacionNovedad">
+      <soap:operation soapAction="http://tempuri.org/AsignacionNovedad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraSerialInventario">
+      <soap:operation soapAction="http://tempuri.org/RegistraSerialInventario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NotusExpressBancolombiaServiceSoap12" type="tns:NotusExpressBancolombiaServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ActualizaGestionVenta">
+      <soap12:operation soapAction="http://tempuri.org/ActualizaGestionVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraSerialGestionVenta">
+      <soap12:operation soapAction="http://tempuri.org/RegistraSerialGestionVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraCampania">
+      <soap12:operation soapAction="http://tempuri.org/RegistraCampania" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizaCampania">
+      <soap12:operation soapAction="http://tempuri.org/ActualizaCampania" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarMotorizado">
+      <soap12:operation soapAction="http://tempuri.org/AsignarMotorizado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearNovedadCem">
+      <soap12:operation soapAction="http://tempuri.org/CrearNovedadCem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignacionNovedad">
+      <soap12:operation soapAction="http://tempuri.org/AsignacionNovedad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraSerialInventario">
+      <soap12:operation soapAction="http://tempuri.org/RegistraSerialInventario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NotusExpressBancolombiaService">
+    <wsdl:port name="NotusExpressBancolombiaServiceSoap" binding="tns:NotusExpressBancolombiaServiceSoap">
+      <soap:address location="http://apps.logytechmobile.com/NotusExpress.Bancolombia/WebService/NotusExpressBancolombiaService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NotusExpressBancolombiaServiceSoap12" binding="tns:NotusExpressBancolombiaServiceSoap12">
+      <soap12:address location="http://apps.logytechmobile.com/NotusExpress.Bancolombia/WebService/NotusExpressBancolombiaService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

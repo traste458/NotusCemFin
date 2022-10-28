@@ -1,0 +1,1374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD45B418-ACCD-466D-908A-B1FCD51422F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ILSBusinessLayer</RootNamespace>
+    <AssemblyName>ILSBusinessLayer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ILSBusinessLayer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ILSBusinessLayer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.17.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="GemBox.Spreadsheet">
+      <HintPath>..\..\..\..\LibreriasClase\CodigoFuente\Base\UtilidadesDDL\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Storage.Blob, Version=11.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Storage.Blob.11.2.3\lib\net452\Microsoft.Azure.Storage.Blob.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Storage.Common, Version=11.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Storage.Common.11.2.3\lib\net452\Microsoft.Azure.Storage.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlmacenamientoAzure\GestionArchivosAzureStorage.vb" />
+    <Compile Include="Autenticacion\CambioContrasena.vb" />
+    <Compile Include="Autenticacion\CreacionContrasenaRandom.vb" />
+    <Compile Include="Autenticacion\EncryptionLibrary.vb" />
+    <Compile Include="Autenticacion\ObtenerPolicticasContrasena.vb" />
+    <Compile Include="Autenticacion\RecuperacionContrasena.vb" />
+    <Compile Include="Autenticacion\RecuperarContrasena.vb" />
+    <Compile Include="Autenticacion\ValidacionAccesoLogin.vb" />
+    <Compile Include="Autenticacion\ValidacionContrasena.vb" />
+    <Compile Include="Comunes\AdministradorArchivos.vb" />
+    <Compile Include="Comunes\AdministradorCorreo.vb" />
+    <Compile Include="Comunes\AlmacenBodega.vb" />
+    <Compile Include="Comunes\AlmacenBodegaColeccion.vb" />
+    <Compile Include="Comunes\ArchivoAyuda.vb" />
+    <Compile Include="Comunes\ArchivoAyudaColeccion.vb" />
+    <Compile Include="Comunes\AsuntoNotificacion.vb" />
+    <Compile Include="Comunes\AutenticadorUsuario.vb" />
+    <Compile Include="Comunes\Bodega.vb" />
+    <Compile Include="Comunes\BodegaColeccion.vb" />
+    <Compile Include="Comunes\CambioDeEstadoSAP.vb" />
+    <Compile Include="Comunes\CambioRegionSAP.vb" />
+    <Compile Include="Comunes\CampaniaPOP.vb" />
+    <Compile Include="Comunes\CampaniaPOPColeccion.vb" />
+    <Compile Include="Comunes\ClaseMovimientoStockSAP.vb" />
+    <Compile Include="Comunes\Cliente.vb" />
+    <Compile Include="Comunes\ClienteExterno.vb" />
+    <Compile Include="Comunes\Code39.vb" />
+    <Compile Include="Comunes\ConfiguracionLecturaSerial.vb" />
+    <Compile Include="Comunes\ConfiguracionLecturaSerialColeccion.vb" />
+    <Compile Include="Comunes\ConfigValues.vb" />
+    <Compile Include="Comunes\ConsultarSerialesSAP.vb" />
+    <Compile Include="Comunes\DetalleAsuntoNotificacion.vb" />
+    <Compile Include="Comunes\DetalleAsuntoNotificacionColeccion.vb" />
+    <Compile Include="Comunes\EMailManager.vb" />
+    <Compile Include="Comunes\EstadoColeccion.vb" />
+    <Compile Include="Comunes\EstadoEntidad.vb" />
+    <Compile Include="Comunes\EstadoEntidadColeccion.vb" />
+    <Compile Include="Comunes\EstadoGenerico.vb" />
+    <Compile Include="Comunes\EstadoGenericoColeccion.vb" />
+    <Compile Include="Comunes\ExcelManager.vb" />
+    <Compile Include="Comunes\IdentificadorListaDenegadaPorSeleccion.vb" />
+    <Compile Include="Comunes\Imagen.vb" />
+    <Compile Include="Comunes\InfoEstadoRestriccionCEM.vb" />
+    <Compile Include="Comunes\InfoUrlService.vb" />
+    <Compile Include="Comunes\InfoUrlSidService.vb" />
+    <Compile Include="Comunes\ListaOpcionEspecificaDenegada.vb" />
+    <Compile Include="Comunes\ListaOpcionFuncionalDenegada.vb" />
+    <Compile Include="Comunes\MenusHandler.vb" />
+    <Compile Include="Comunes\NotificadorGeneralEventos.vb" />
+    <Compile Include="Comunes\ObjetosRespuestaRest\DocumentsDto.vb" />
+    <Compile Include="Comunes\ObjetosRespuestaRest\RespuestaRootObject.vb" />
+    <Compile Include="Comunes\OpcionEspecificaDenegada.vb" />
+    <Compile Include="Comunes\OpcionFuncionalDenegada.vb" />
+    <Compile Include="Comunes\PerfilTipoServicioUnidadNegocio.vb" />
+    <Compile Include="Comunes\PerfilTipoServicioUnidadNegocioColeccion.vb" />
+    <Compile Include="Comunes\PerfilUnidadNegocio.vb" />
+    <Compile Include="Comunes\PerfilUnidadNegocioColeccion.vb" />
+    <Compile Include="Comunes\PermisosPerfil.vb" />
+    <Compile Include="Comunes\PosicionBodega.vb" />
+    <Compile Include="Comunes\RestApiManager.vb" />
+    <Compile Include="Comunes\ResultadoApiRest.vb" />
+    <Compile Include="Comunes\ServicioRest.vb" />
+    <Compile Include="Comunes\Solicitante.vb" />
+    <Compile Include="Comunes\Tercero.vb" />
+    <Compile Include="Comunes\TerceroColeccion.vb" />
+    <Compile Include="Comunes\TipoAlistamiento.vb" />
+    <Compile Include="Comunes\Destinatario.vb" />
+    <Compile Include="Comunes\Estado.vb" />
+    <Compile Include="Comunes\GeneradorCredencialesWebService.vb" />
+    <Compile Include="Comunes\GeneradorDocumentosSAP.vb" />
+    <Compile Include="Comunes\InfoCargueProductoSAP.vb" />
+    <Compile Include="Comunes\InformacionRutaTransportadora.vb" />
+    <Compile Include="Comunes\ProductosSerial.vb" />
+    <Compile Include="Comunes\ResultadoProceso.vb" />
+    <Compile Include="Comunes\TipoServicioUnidadNegocio.vb" />
+    <Compile Include="Comunes\TipoServicioUnidadNegocioColeccion.vb" />
+    <Compile Include="Comunes\TransitoriaPerfilTipoServicioUnidadNegocio.vb" />
+    <Compile Include="Comunes\TransitoriaPerfilTipoServicioUnidadNegocioColeccion.vb" />
+    <Compile Include="Comunes\TransitoriaTipoServicioUnidadNegocio.vb" />
+    <Compile Include="Comunes\TransitoriaTipoServicioUnidadNegocioColeccion.vb" />
+    <Compile Include="Comunes\TransportadoraColeccion.vb" />
+    <Compile Include="Comunes\UnidadNegocio.vb" />
+    <Compile Include="Comunes\UnidadNegocioColeccion.vb" />
+    <Compile Include="Comunes\UsuarioAuditorInventario.vb" />
+    <Compile Include="Comunes\UsuarioAuditorInventarioColeccion.vb" />
+    <Compile Include="Comunes\UsuarioColeccion.vb" />
+    <Compile Include="Comunes\UsuarioNotificacionColeccion.vb" />
+    <Compile Include="Comunes\ValidarAcceso.vb" />
+    <Compile Include="Delivery\Delivery.vb" />
+    <Compile Include="Delivery\HerramientasDelivery.vb" />
+    <Compile Include="Delivery\json\AlistamientoDto.vb" />
+    <Compile Include="Delivery\json\EntregaDto.vb" />
+    <Compile Include="Delivery\json\EstadoEntregaDto.vb" />
+    <Compile Include="Delivery\json\MaterialDto.vb" />
+    <Compile Include="Delivery\json\OrdenDto.vb" />
+    <Compile Include="Delivery\json\PedidoDto.vb" />
+    <Compile Include="Delivery\json\RestDelivery.vb" />
+    <Compile Include="Delivery\json\RootObject.vb" />
+    <Compile Include="Delivery\json\SerialDto.vb" />
+    <Compile Include="Delivery\json\TransportadorDto.vb" />
+    <Compile Include="Delivery\TransportadorDelivery.vb" />
+    <Compile Include="Despachos\ConsultaDespachos.vb" />
+    <Compile Include="Despachos\DespachoGeneral.vb" />
+    <Compile Include="Despachos\DespachoRIM.vb" />
+    <Compile Include="Despachos\MoviemientosSAP_ServicioTecnico.vb" />
+    <Compile Include="Despachos\ReporteGeneralDespachosPOP.vb" />
+    <Compile Include="Despachos\ResumenInfoAsignacionTransportadoraADespachoMasivo.vb" />
+    <Compile Include="Devoluciones\CambiarProductoPadreSerialesdevolucion.vb" />
+    <Compile Include="Devoluciones\Devoluciones.vb" />
+    <Compile Include="Devoluciones\DevolucionesFaltantes.vb" />
+    <Compile Include="Devoluciones\GrupodeDevolucion.vb" />
+    <Compile Include="Devoluciones\GrupodeDevolucionColeccion.vb" />
+    <Compile Include="Devoluciones\NovedadSerialOrdenRecoleccion.vb" />
+    <Compile Include="Entities\InformacionSesion.vb" />
+    <Compile Include="Entities\MenuGeneral.vb" />
+    <Compile Include="Entities\MenuTop.vb" />
+    <Compile Include="Entities\ResultadoEntidad.vb" />
+    <Compile Include="Entities\TrazabilidadEntities.vb" />
+    <Compile Include="Facturacion\CentroCostoFacturacion.vb" />
+    <Compile Include="Facturacion\EventoFacturacion.vb" />
+    <Compile Include="Facturacion\ReporteFacturacionConsolidadoILS.vb" />
+    <Compile Include="Facturacion\SoporteReporteFacturacionILS.vb" />
+    <Compile Include="Fulfillment\CargarDatosFulfillment.vb" />
+    <Compile Include="Fulfillment\CargarDatosNoConformes.vb" />
+    <Compile Include="Fulfillment\CargarDatosSims.vb" />
+    <Compile Include="Fulfillment\GeneradorDuplaPreactivada.vb" />
+    <Compile Include="Fulfillment\GestionNovedadProduccion.vb" />
+    <Compile Include="Fulfillment\GestionNovedadProduccionColeccion.vb" />
+    <Compile Include="Fulfillment\ImpresionDuplaSerialPreactivado.vb" />
+    <Compile Include="Fulfillment\ImpresionImeiConSerialDeProductoPromocional.vb" />
+    <Compile Include="Fulfillment\NovedadProduccion.vb" />
+    <Compile Include="Fulfillment\NovedadProduccionColeccion.vb" />
+    <Compile Include="Fulfillment\SerialProductoPromocional.vb" />
+    <Compile Include="Fulfillment\DetalleLecturaTarjetaRaspeGane.vb" />
+    <Compile Include="Fulfillment\FulfillmentBase.vb" />
+    <Compile Include="Fulfillment\FulfillmentFactory.vb" />
+    <Compile Include="Fulfillment\IFulfillment.vb" />
+    <Compile Include="Fulfillment\ImpresionImeiConTarjetaRaspeGane.vb" />
+    <Compile Include="Fulfillment\LectProduccionSims.vb" />
+    <Compile Include="Fulfillment\LecturaHandset.vb" />
+    <Compile Include="Fulfillment\OrdenReprocesoFF.vb" />
+    <Compile Include="Fulfillment\OrdenTrabajoFF.vb" />
+    <Compile Include="Fulfillment\PostProduccion.vb" />
+    <Compile Include="Fulfillment\ProduccionHandset.vb" />
+    <Compile Include="Fulfillment\ProduccionNoConformes.vb" />
+    <Compile Include="Fulfillment\RangoLecturaTarjetaRaspeGane.vb" />
+    <Compile Include="Fulfillment\Reprocesos.vb" />
+    <Compile Include="Fulfillment\ReprocesosHandset.vb" />
+    <Compile Include="Fulfillment\ReprocesosNoConformes.vb" />
+    <Compile Include="Fulfillment\SoporteNovedadProduccion.vb" />
+    <Compile Include="Fulfillment\SoporteNovedadProduccionColeccion.vb" />
+    <Compile Include="Fulfillment\SoporteSimLockVerificacionFactura.vb" />
+    <Compile Include="Fulfillment\SoporteSimLockVerificacionFacturaColeccion.vb" />
+    <Compile Include="Fulfillment\UsuariosFulfillment.vb" />
+    <Compile Include="Fulfillment\UsuariosFulfillmentColeccion.vb" />
+    <Compile Include="Fulfillment\VerificacionFactura.vb" />
+    <Compile Include="Fulfillment\VerificacionFacturaColeccion.vb" />
+    <Compile Include="GeneracionGuiasTransportadoras\BodegaSatelite.vb" />
+    <Compile Include="GeneracionGuiasTransportadoras\CargueInventarioCemMasivoSerializado.vb" />
+    <Compile Include="GeneracionGuiasTransportadoras\CuentasTransportadoras.vb" />
+    <Compile Include="GeneracionGuiasTransportadoras\GeneracionGuias.vb" />
+    <Compile Include="GeneracionGuiasTransportadoras\RutaServicioMensajeriaTransportadora.vb" />
+    <Compile Include="InfoOperaciones\ActualizaPin.vb" />
+    <Compile Include="InfoOperaciones\CargarInfoDuplaSerial.vb" />
+    <Compile Include="InfoOperaciones\CargueArchivoDeclaraciones.vb" />
+    <Compile Include="InfoOperaciones\CierreCicloCargue.vb" />
+    <Compile Include="InfoOperaciones\CierreFacturaFaltantes.vb" />
+    <Compile Include="InfoOperaciones\Colores.vb" />
+    <Compile Include="InfoOperaciones\ConsultaSerialesDeclaracion.vb" />
+    <Compile Include="InfoOperaciones\CrearOTBSimsEnGuacal.vb" />
+    <Compile Include="InfoOperaciones\CruzeFacturaDeclaracion.vb" />
+    <Compile Include="InfoOperaciones\Declaracion.vb" />
+    <Compile Include="InfoOperaciones\DeclaracionColeccion.vb" />
+    <Compile Include="InfoOperaciones\MetodoCierreCicloCargue.vb" />
+    <Compile Include="InfoOperaciones\NovedadDeclaracion.vb" />
+    <Compile Include="InfoOperaciones\NovedadesProduccion.vb" />
+    <Compile Include="InfoOperaciones\ProgramacionCierreCicloCargue.vb" />
+    <Compile Include="InfoOperaciones\CambioMaterialSims.vb" />
+    <Compile Include="InfoOperaciones\ReporteEnvioIntermediariasDeclaracion.vb" />
+    <Compile Include="InfoOperaciones\ReporteFaltantes.vb" />
+    <Compile Include="InfoOperaciones\ReporteNoSap.vb" />
+    <Compile Include="InfoOperaciones\ReporteNovedades.vb" />
+    <Compile Include="InfoOperaciones\ReportePruebasMuestreo.vb" />
+    <Compile Include="InfoOperaciones\ReporteSerialConDeclaracion.vb" />
+    <Compile Include="InfoOperaciones\ReporteSerialSinDeclaracion.vb" />
+    <Compile Include="InfoOperaciones\ReporteUnidadesSinInstruccionSinProduccion.vb" />
+    <Compile Include="InfoOperaciones\TipoSoftware.vb" />
+    <Compile Include="InfoOperaciones\UsuarioCargue.vb" />
+    <Compile Include="InventarioFisico\Alerta.vb" />
+    <Compile Include="InventarioFisico\BodegaProcesoLinea.vb" />
+    <Compile Include="InventarioFisico\CargueInventarioClienteBLL.vb" />
+    <Compile Include="InventarioFisico\InfoInventarioSerial.vb" />
+    <Compile Include="InventarioFisico\InfoInventarioSerialColeccion.vb" />
+    <Compile Include="InventarioFisico\InventarioFisicoBLL.vb" />
+    <Compile Include="InventarioFisico\OrdenInventarioFisico.vb" />
+    <Compile Include="InventarioFisico\ReporteDeOrdenesDeInventarioFisico.vb" />
+    <Compile Include="InventarioFisico\ReporteDeSerialesFaltantesEnInventarioFisico.vb" />
+    <Compile Include="InventarioFisico\ReporteDeSerialesSobrantesEnInventarioFisico.vb" />
+    <Compile Include="InventarioFisico\ReporteEstadoInventario.vb" />
+    <Compile Include="InventarioFisico\ReporteEstadoInventarioFisicoPorBodega.vb" />
+    <Compile Include="InventarioFisico\ReporteEstadoInventarioFisicoPorLinea.vb" />
+    <Compile Include="InventarioFisico\ReporteInactividadLineasDeInventario.vb" />
+    <Compile Include="InventarioFisico\ReporteMaestroDeInventarioFisico.vb" />
+    <Compile Include="InventarioFisico\ReporteProductividadInventario.vb" />
+    <Compile Include="Inventario\BloqueoInventario.vb" />
+    <Compile Include="Inventario\BloqueoInventarioColeccion.vb" />
+    <Compile Include="Inventario\DetalleProductoBloqueo.vb" />
+    <Compile Include="Inventario\DetalleProductoBloqueoColeccion.vb" />
+    <Compile Include="Inventario\DetalleSerialBloqueo.vb" />
+    <Compile Include="Inventario\DetalleSerialBloqueoColeccion.vb" />
+    <Compile Include="Inventario\InventarioBodegaPrincipalColeccion.vb" />
+    <Compile Include="Inventario\InventarioBodegaSateliteColeccion.vb" />
+    <Compile Include="Inventario\ItemBodegaPrincipal.vb" />
+    <Compile Include="Inventario\ItemBodegaSatelite.vb" />
+    <Compile Include="Localizacion\Ciudad.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogisticaInversa\AdministracionTransportadoras.vb" />
+    <Compile Include="MensajeriaEspecializada\ActualizacionServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\actualizacionZonaMotorizadoPorArchivo.vb" />
+    <Compile Include="MensajeriaEspecializada\ActualizarFacturasServiciosdeMensajería.vb" />
+    <Compile Include="MensajeriaEspecializada\ActualizarInformacionServicioMensajeriaArchivo.vb" />
+    <Compile Include="MensajeriaEspecializada\ActualizarMarcacionTipoSIMCARDserialesCEMC.vb" />
+    <Compile Include="MensajeriaEspecializada\ActualizarUsuarioEjecutorServicioCem.vb" />
+    <Compile Include="MensajeriaEspecializada\AdministraciondeCambiodeEstadosCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\AdministracionMaterialClaseSim.vb" />
+    <Compile Include="MensajeriaEspecializada\AdministracionZonaUsuario.vb" />
+    <Compile Include="MensajeriaEspecializada\CallCenter.vb" />
+    <Compile Include="MensajeriaEspecializada\CallCenterColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\CambioMaterialCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\CambioServicio.vb" />
+    <Compile Include="MensajeriaEspecializada\Campania.vb" />
+    <Compile Include="MensajeriaEspecializada\CampaniaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\CampaniaFinanciero.vb" />
+    <Compile Include="MensajeriaEspecializada\CapacidadEntrega.vb" />
+    <Compile Include="MensajeriaEspecializada\CargarInventarioCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueArchivoMinesCorporativo.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueArchivoMinesCorporativoSoloSim.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueArchivoMinesSiembra.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueArchivosCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueArchivoServicioTecnico.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueInventarioServicioFinanciero.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueMasivoInventarioFinanciero.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueMasivoRadicados.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueMasivoVentasServiciosFinancieros.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueMasivoVentasWeb.vb" />
+    <Compile Include="MensajeriaEspecializada\CargueServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\CentroExperiencia.vb" />
+    <Compile Include="MensajeriaEspecializada\CiudadCargueServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\CiudadesCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\CiudadesCEMColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ClienteCem.vb" />
+    <Compile Include="MensajeriaEspecializada\ClienteCemColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ConsultaDescargueSerialesEntregadoCem.vb" />
+    <Compile Include="MensajeriaEspecializada\ConsultaInventarioSatelite.vb" />
+    <Compile Include="MensajeriaEspecializada\CreacionMotorizado.vb" />
+    <Compile Include="MensajeriaEspecializada\CrearCargueRealceBancolombia.vb" />
+    <Compile Include="MensajeriaEspecializada\CrearCargueRealceDavivienda.vb" />
+    <Compile Include="MensajeriaEspecializada\CruceFisicoVsSolicitado.vb" />
+    <Compile Include="MensajeriaEspecializada\DescargueInventarioCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\DespachoMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleBloqueoSerialServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleDespachoServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleDespachoServicioMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleImeiPrestamoServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMaterialServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMaterialServicioMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMaterialServicioMensajeriaTipoVentaCorporativaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMsisdnEnServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMsisdnEnServicioMensajeriaCargue.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMsisdnEnServicioMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMsisdnEnServicioMensajeriaColeccionCargue.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMsisdnEnServicioMensajeriaTipoSiembra.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMsisdnEnServicioMensajeriaTipoVenta.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleMsisdnEnServicioMensajeriaTipoVentaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleRutaServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleSerialServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleSerialServicioMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleServicioMensajeriaTipoVentaCorporativaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleTraslado.vb" />
+    <Compile Include="MensajeriaEspecializada\DetalleTrasladoColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DevolucionCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\DiasNoHabiles.vb" />
+    <Compile Include="MensajeriaEspecializada\DiasNoHabilesColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\Documento.vb" />
+    <Compile Include="MensajeriaEspecializada\DocumentoColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DocumentoServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\DocumentoServicioMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\DocumentoTemporalServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\Entidades\CiudadCubrimientoCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\Entidades\DetallePedidoCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\Entidades\InfoPedidoCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\Entidades\ResultadoGeneral.vb" />
+    <Compile Include="MensajeriaEspecializada\Entidades\ResultadoPedido.vb" />
+    <Compile Include="MensajeriaEspecializada\FabricadorDetalleMsisdnEnServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\GeneradorMatrizCubrimientoCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\GenerarCreacionRutas.vb" />
+    <Compile Include="MensajeriaEspecializada\GenerarPoolAsignacionSerialesPrestamo.vb" />
+    <Compile Include="MensajeriaEspecializada\GenerarPoolGestionVentas.vb" />
+    <Compile Include="MensajeriaEspecializada\GenerarPoolServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\GerenciaCliente.vb" />
+    <Compile Include="MensajeriaEspecializada\GerenciaClienteColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\GestionAutomarcado.vb" />
+    <Compile Include="MensajeriaEspecializada\GestionNovedadServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\GestionNovedadServicioMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\GestionServicioTecnico.vb" />
+    <Compile Include="MensajeriaEspecializada\GestionServicioTecnicoColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\GestionTipoSIMEspeciales.vb" />
+    <Compile Include="MensajeriaEspecializada\GestionVentasDetallado.vb" />
+    <Compile Include="MensajeriaEspecializada\HerramientasMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\HorarioVenta.vb" />
+    <Compile Include="MensajeriaEspecializada\HorarioVentaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\IDetalleMsisdnEnServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\InfoCapacidadEntregaServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\InfoCapacidadEntregaServicioMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\InfoMotorizado.vb" />
+    <Compile Include="MensajeriaEspecializada\InventarioSatelitePrestamo.vb" />
+    <Compile Include="MensajeriaEspecializada\InventarioSateliteVenta.vb" />
+    <Compile Include="MensajeriaEspecializada\IServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\IServicioNotusExpress.vb" />
+    <Compile Include="MensajeriaEspecializada\LegalizarServicioCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\MaterialEnPlanVenta.vb" />
+    <Compile Include="MensajeriaEspecializada\MaterialEnPlanVentaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\MaterialEquipoClaseSIM.vb" />
+    <Compile Include="MensajeriaEspecializada\MaterialEquipoClaseSIMColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\MaterialSiembra.vb" />
+    <Compile Include="MensajeriaEspecializada\MaterialSiembraColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\MaterialSIMClaseSIM.vb" />
+    <Compile Include="MensajeriaEspecializada\MaterialSIMClaseSIMColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\MatrizTipoClientePlanRecaudo.vb" />
+    <Compile Include="MensajeriaEspecializada\MatrizTipoClientePlanRecaudoColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\MsisdnEnServicioSiembraColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\MsisdnTemporalServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\NotificacionAlertasSiembra.vb" />
+    <Compile Include="MensajeriaEspecializada\NotificacionEventosInventarioCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\NotificacionServicioTiendaVirtual.vb" />
+    <Compile Include="MensajeriaEspecializada\NovedadServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\NovedadServicioMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\OfficeTrack\ConfiguracionOfficeTrack.vb" />
+    <Compile Include="MensajeriaEspecializada\OfficeTrack\OfficeTrackEntry.vb" />
+    <Compile Include="MensajeriaEspecializada\OfficeTrack\OfficeTrackTask.vb" />
+    <Compile Include="MensajeriaEspecializada\PaqueteVenta.vb" />
+    <Compile Include="MensajeriaEspecializada\PaqueteVentaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\PedidoMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\PerfilTipoServicioBodega.vb" />
+    <Compile Include="MensajeriaEspecializada\PerfilTipoServicioBodegaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\PersonalEnGerencia.vb" />
+    <Compile Include="MensajeriaEspecializada\PersonalEnGerenciaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\PickingMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\PlanillaRadicacion.vb" />
+    <Compile Include="MensajeriaEspecializada\PlanVenta.vb" />
+    <Compile Include="MensajeriaEspecializada\PlanVentaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\PreventasNoExitosasReporte.vb" />
+    <Compile Include="MensajeriaEspecializada\PrioridadMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\PrioridadMensajeriaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\RedistribucionSerialesCE.vb" />
+    <Compile Include="MensajeriaEspecializada\RedistribucionSerialesCEArchivo.vb" />
+    <Compile Include="MensajeriaEspecializada\RegistrarRutasMasivo.vb" />
+    <Compile Include="MensajeriaEspecializada\RelacionUsuarioCadenaWEB.vb" />
+    <Compile Include="MensajeriaEspecializada\RelacionUsuarioCadenaWEBColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteAdendoVentaCorporativa.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteCargueInventarioServicioFinancieros.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteDetalladoNotificacionesCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteDetalladoServicios.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteEntregaProductoCampania.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteGeneralServiciosSiembra.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteGeneralVentasTiendaVirtual.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteGeneralVentasWebBLL.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteNotificacionesCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteNotificacionesCEMColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteNotificacionesCEMDetalle.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteNotificacionesCEMDetalleColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteServiciosPendientedeGestion.vb" />
+    <Compile Include="MensajeriaEspecializada\ReportesSiembra\ReporteDetalldoServiciosSiembraBLL.vb" />
+    <Compile Include="MensajeriaEspecializada\ReportesSiembra\ReporteIndicadoresSiembraBLL.vb" />
+    <Compile Include="MensajeriaEspecializada\ReportesSiembra\ReporteInventarioSiembraBLL.vb" />
+    <Compile Include="MensajeriaEspecializada\ReportesSiembra\ReporteMaterialesSiembraBLL.vb" />
+    <Compile Include="MensajeriaEspecializada\ReportesSiembra\ReporteServiciosSiembraAbiertosBLL.vb" />
+    <Compile Include="MensajeriaEspecializada\ReportesSiembra\ReporteUnidadesDisponiblesSiembraBLL.vb" />
+    <Compile Include="MensajeriaEspecializada\ReporteZonaServicio.vb" />
+    <Compile Include="MensajeriaEspecializada\RutaRecoleccionServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\RutaServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\RutaServicioMensajeriaRadicado.vb" />
+    <Compile Include="MensajeriaEspecializada\RutaServicioMensajeriaSiembra.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaFinanciero.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaSiembra.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaSiembraColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaTiendaVirtual.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaTipoServicio.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaTipoServicioColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaVenta.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaVentaCorporativa.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaVentaCorporativaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaVentaEducativa.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioMensajeriaVentaWeb.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioNotusExpressBancolombia.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioNotusExpressDavivienda.vb" />
+    <Compile Include="MensajeriaEspecializada\ServicioNotusExpressDaviviendaSamsung.vb" />
+    <Compile Include="MensajeriaEspecializada\ServiciosPorCallCenterReporte.vb" />
+    <Compile Include="MensajeriaEspecializada\Site.vb" />
+    <Compile Include="MensajeriaEspecializada\SiteColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\TipoArchivoCargueServicioMensajeria.vb" />
+    <Compile Include="MensajeriaEspecializada\TipoNovedad.vb" />
+    <Compile Include="MensajeriaEspecializada\TipoServicio.vb" />
+    <Compile Include="MensajeriaEspecializada\TipoServicioColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\Traslado.vb" />
+    <Compile Include="MensajeriaEspecializada\UsuarioBodega.vb" />
+    <Compile Include="MensajeriaEspecializada\UsuarioBodegaColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\UsuarioNotificacionCEM.vb" />
+    <Compile Include="MensajeriaEspecializada\UsuarioNotificacionCEMColeccion.vb" />
+    <Compile Include="MensajeriaEspecializada\ValidarCargue.vb" />
+    <Compile Include="NotificacionTransportadora\SoporteNotificacionEntidad.vb" />
+    <Compile Include="NotificacionTransportadora\SoporteNotificacionTransportadora.vb" />
+    <Compile Include="NotificacionTransportadora\TokenInfo.vb" />
+    <Compile Include="NotificacionTransportadora\UserInfo.vb" />
+    <Compile Include="OMS\AuxInfoCargueImportacionSAP.vb" />
+    <Compile Include="OMS\CambioDeSoftware.vb" />
+    <Compile Include="OMS\DetalleCargaPedidoSAP.vb" />
+    <Compile Include="OMS\EquiposRecuperadosSAP.vb" />
+    <Compile Include="OMS\GeneracionPickingReproceso.vb" />
+    <Compile Include="OMS\InfoTarjetaPrepago.vb" />
+    <Compile Include="Comunes\Transportadora.vb" />
+    <Compile Include="Comunes\Usuario.vb" />
+    <Compile Include="Comunes\UsuarioNotificacion.vb" />
+    <Compile Include="Despachos\Despacho.vb" />
+    <Compile Include="Despachos\Detalle.vb" />
+    <Compile Include="Despachos\DetalleSerial.vb" />
+    <Compile Include="Despachos\DocumentoSAPDespacho.vb" />
+    <Compile Include="Despachos\TipoDespacho.vb" />
+    <Compile Include="Despachos\TipoTransporte.vb" />
+    <Compile Include="Entregas\FormularioMovimientoMercancia.vb" />
+    <Compile Include="Entregas\SalidaMercancia.vb" />
+    <Compile Include="HerramientasFuncionales.vb" />
+    <Compile Include="Localizacion\Region.vb" />
+    <Compile Include="Estructuras.vb" />
+    <Compile Include="Fabricantes\Fabricante.vb" />
+    <Compile Include="Localizacion\Pais.vb" />
+    <Compile Include="LogisticaInversa\Devolucion.vb" />
+    <Compile Include="LogisticaInversa\DevolucionDetalle.vb" />
+    <Compile Include="LogisticaInversa\DevolucionDetalleSerial.vb" />
+    <Compile Include="LogisticaInversa\DevolucionSerialRechazado.vb" />
+    <Compile Include="LogisticaInversa\GrupoDevolucion.vb" />
+    <Compile Include="LogisticaInversa\NovedadCarga.vb" />
+    <Compile Include="LogisticaInversa\NovedadSerial.vb" />
+    <Compile Include="LogisticaInversa\OrdenRecoleccion.vb" />
+    <Compile Include="LogisticaInversa\OrdenRecoleccionAccesorio.vb" />
+    <Compile Include="LogisticaInversa\OrdenRecoleccionDetalle.vb" />
+    <Compile Include="LogisticaInversa\OrdenRecoleccionSerial.vb" />
+    <Compile Include="LogisticaInversa\RecoleccionSerial.vb" />
+    <Compile Include="LogisticaInversa\Sucursal.vb" />
+    <Compile Include="LogisticaInversa\TrasladoRecoleccion.vb" />
+    <Compile Include="LogisticaInversa\TrasladoRecoleccionSerial.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Novedad\Novedad.vb" />
+    <Compile Include="Novedad\TipoNovedad.vb" />
+    <Compile Include="OMS\CargadorReproceso.vb" />
+    <Compile Include="OMS\DetalleEnvioLectura.vb" />
+    <Compile Include="OMS\Distribucion.vb" />
+    <Compile Include="OMS\EnvioNacionalizacionDetalle.vb" />
+    <Compile Include="OMS\EnvioNacionalizacionSerial.vb" />
+    <Compile Include="OMS\EnvioPruebaSerial.vb" />
+    <Compile Include="OMS\HistorialDescargaEnvioLectura.vb" />
+    <Compile Include="OMS\InstruccionOrdenCompra.vb" />
+    <Compile Include="OMS\InstruccionReproceso.vb" />
+    <Compile Include="OMS\InstruccionReprocesoColeccion.vb" />
+    <Compile Include="OMS\InstruccionReprocesoDetalle.vb" />
+    <Compile Include="OMS\InstruccionReprocesoDetalleColeccion.vb" />
+    <Compile Include="OMS\IntermediariasAduaneras.vb" />
+    <Compile Include="OMS\Linea.vb" />
+    <Compile Include="OMS\MaterialPreinstruccionCliente.vb" />
+    <Compile Include="OMS\MaterialTermosellado.vb" />
+    <Compile Include="OMS\NotificadorEventosReprocesos.vb" />
+    <Compile Include="OMS\Operario.vb" />
+    <Compile Include="OMS\OrdenCombo.vb" />
+    <Compile Include="OMS\OrdenComboDetalle.vb" />
+    <Compile Include="OMS\OrdenEnvioLecturaReproceso.vb" />
+    <Compile Include="OMS\OrdenEnvioNacionalizacion.vb" />
+    <Compile Include="OMS\OrdenEnvioPrueba.vb" />
+    <Compile Include="OMS\OrdenNacionalizacion.vb" />
+    <Compile Include="OMS\OrdenReprocesoColeccion.vb" />
+    <Compile Include="OMS\OrdenTermosellado.vb" />
+    <Compile Include="OMS\DistribucionPorcentual.vb" />
+    <Compile Include="OMS\OrdenTrabajoReproceso.vb" />
+    <Compile Include="OMS\PreinstruccionCantidadDistribucion.vb" />
+    <Compile Include="OMS\PreinstruccionCliente.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OMS\PreinstruccionClienteColeccion.vb" />
+    <Compile Include="OMS\PreinstruccionPorcentajeRegion.vb" />
+    <Compile Include="OMS\PreinstruccionPorcentajeSubdistribucion.vb" />
+    <Compile Include="OMS\PreinstruccionPorcentajeTipoInstruccion.vb" />
+    <Compile Include="OMS\ProductoDevolucionReproceso.vb" />
+    <Compile Include="OMS\ReplicaReprocesosSAP.vb" />
+    <Compile Include="OMS\ReporteInfoFacturaNoCargada.vb" />
+    <Compile Include="OMS\ReporteNoConformesFacturas.vb" />
+    <Compile Include="OMS\ReprocesoSIM.vb" />
+    <Compile Include="OMS\ReprorteReprocesos.vb" />
+    <Compile Include="OMS\SerialesNCRecuperados.vb" />
+    <Compile Include="OMS\SerialMuestra.vb" />
+    <Compile Include="OMS\OrdenEnvioLectura.vb" />
+    <Compile Include="OMS\SubdistribucionInstruccion.vb" />
+    <Compile Include="OMS\TipoDistribucion.vb" />
+    <Compile Include="OMS\TipoInstruccionRegion.vb" />
+    <Compile Include="OMS\TipoReproceso.vb" />
+    <Compile Include="OMS\TipoReprocesoColeccion.vb" />
+    <Compile Include="Pedidos\CargarSerialesCuarentena.vb" />
+    <Compile Include="Pedidos\DetallePicking.vb" />
+    <Compile Include="Pedidos\DetalleSerialCuarentena.vb" />
+    <Compile Include="Pedidos\LogLiberacionCuarentena.vb" />
+    <Compile Include="Pedidos\Pedido.vb" />
+    <Compile Include="Pedidos\PedidoServicioTecnico.vb" />
+    <Compile Include="Pedidos\Picking.vb" />
+    <Compile Include="Pedidos\TipoPedido.vb" />
+    <Compile Include="Pedidos\TipoPedidoColeccion.vb" />
+    <Compile Include="Productos\CargueProductoFinanciero.vb" />
+    <Compile Include="Productos\CargueProductoFinancieroSerializado.vb" />
+    <Compile Include="Productos\ClasificacionProducto.vb" />
+    <Compile Include="Productos\ClasificacionProductoColeccion.vb" />
+    <Compile Include="Productos\InventarioCargueProductoFinanciero.vb" />
+    <Compile Include="Productos\Material.vb" />
+    <Compile Include="Productos\MaterialColeccion.vb" />
+    <Compile Include="Productos\Producto.vb" />
+    <Compile Include="Productos\ProductoColeccion.vb" />
+    <Compile Include="Productos\ProductoComercial.vb" />
+    <Compile Include="Productos\ProductoComercialColeccion.vb" />
+    <Compile Include="Productos\ProductoDocumentoFinanciero.vb" />
+    <Compile Include="Productos\ProductoDocumentoFinancieroColeccion.vb" />
+    <Compile Include="Productos\Subproducto.vb" />
+    <Compile Include="Productos\Tecnologia.vb" />
+    <Compile Include="Productos\TipoEtiqueta.vb" />
+    <Compile Include="Productos\TipoEtiquetaColeccion.vb" />
+    <Compile Include="Productos\TipoMaterial.vb" />
+    <Compile Include="Productos\TipoMaterialColeccion.vb" />
+    <Compile Include="Productos\TipoProductoColeccion.vb" />
+    <Compile Include="Productos\UnidadEmpaque.vb" />
+    <Compile Include="Proveedores\Proveedor.vb" />
+    <Compile Include="OMS\ClasificacionInstruccion.vb" />
+    <Compile Include="OMS\InstruccionTrabajo.vb" />
+    <Compile Include="OMS\OrdenTrabajo.vb" />
+    <Compile Include="OMS\TipoInstruccion.vb" />
+    <Compile Include="Recibos\CajaEmpaque.vb" />
+    <Compile Include="Recibos\CierredeCicloDevolucioSeriales.vb" />
+    <Compile Include="Recibos\CombinacionTipoProducto.vb" />
+    <Compile Include="Recibos\Consignatario.vb" />
+    <Compile Include="Recibos\ContentType.vb" />
+    <Compile Include="Recibos\DetalleOrdenCompra.vb" />
+    <Compile Include="Recibos\DetallePallet.vb" />
+    <Compile Include="Recibos\DetalleSerialOrdenRecepcion.vb" />
+    <Compile Include="Recibos\DistrubucionPorAlmacen.vb" />
+    <Compile Include="Recibos\FacturaGuia.vb" />
+    <Compile Include="Recibos\Incoterm.vb" />
+    <Compile Include="Recibos\InfoFactura.vb" />
+    <Compile Include="Recibos\InfoGuia.vb" />
+    <Compile Include="Productos\TipoProducto.vb" />
+    <Compile Include="Recibos\Modulo.vb" />
+    <Compile Include="Recibos\ModuloTipoProducto.vb" />
+    <Compile Include="Recibos\Moneda.vb" />
+    <Compile Include="Recibos\OrdenCompra.vb" />
+    <Compile Include="Recibos\OrdenesBodegaje.vb" />
+    <Compile Include="Recibos\OrdenRecepcion.vb" />
+    <Compile Include="Recibos\PalletNovedad.vb" />
+    <Compile Include="Recibos\PalletRecepcion.vb" />
+    <Compile Include="Recibos\ReporteDeInformacionDeReprocesos.vb" />
+    <Compile Include="Recibos\TipoDetalleOrdenCompra.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Recibos\TipoRecepcion.vb" />
+    <Compile Include="Recibos\TipoUnidad.vb" />
+    <Compile Include="ReportesCEM\CirculoAzul.vb" />
+    <Compile Include="ReportesCEM\EstadoDespachos.vb" />
+    <Compile Include="ReportesCEM\EstadoRutas.vb" />
+    <Compile Include="ReportesCEM\IndicadoresCEM.vb" />
+    <Compile Include="ReportesCEM\LineasLegalizadas.vb" />
+    <Compile Include="ReportesCEM\NovedadesCEM.vb" />
+    <Compile Include="ReportesCEM\RadicadosDevoluciones.vb" />
+    <Compile Include="ReportesCEM\ReposicionesGestionadas.vb" />
+    <Compile Include="ReportesCEM\RutaSimpliRoute.vb" />
+    <Compile Include="ReportesCEM\SalidaRutaMotorizados.vb" />
+    <Compile Include="ReportesCEM\SimCard.vb" />
+    <Compile Include="Reportes\DetalleMaterialesEntrega.vb" />
+    <Compile Include="Reportes\ReporteDespachoManual.vb" />
+    <Compile Include="Reportes\ReporteDeTransmisionesTcc.vb" />
+    <Compile Include="Reportes\ReporteSerialesEnviadosPendienteNacionalizacion.vb" />
+    <Compile Include="SAC\CasoSAC.vb" />
+    <Compile Include="SAC\CasoSACColeccion.vb" />
+    <Compile Include="SAC\ClaseDeServicioSAC.vb" />
+    <Compile Include="SAC\ClaseDeServicioSACColeccion.vb" />
+    <Compile Include="SAC\ClienteSAC.vb" />
+    <Compile Include="SAC\ClienteSACColeccion.vb" />
+    <Compile Include="SAC\GeneradorInconformidadSAC.vb" />
+    <Compile Include="SAC\GeneradorInconformidadSACColeccion.vb" />
+    <Compile Include="SAC\InfoGestionCasoSAC.vb" />
+    <Compile Include="SAC\InfoGestionCasoSACColeccion.vb" />
+    <Compile Include="SAC\ModuloUnidadNegocio.vb" />
+    <Compile Include="SAC\OrigenRespuestaGestionCasoSAC.vb" />
+    <Compile Include="SAC\OrigenRespuestaGestionCasoSACColeccion.vb" />
+    <Compile Include="SAC\ResponsableCobroCasoSAC.vb" />
+    <Compile Include="SAC\ResponsableCobroCasoSACColeccion.vb" />
+    <Compile Include="SAC\RespuestaGestionCasoSAC.vb" />
+    <Compile Include="SAC\RespuestaGestionCasoSACColeccion.vb" />
+    <Compile Include="SAC\SerialCasoSAC.vb" />
+    <Compile Include="SAC\SerialSACColeccion.vb" />
+    <Compile Include="SAC\TipoDeClienteSAC.vb" />
+    <Compile Include="SAC\TipoDeClienteSACColeccion.vb" />
+    <Compile Include="SAC\TipoDeServicioSAC.vb" />
+    <Compile Include="SAC\TipoDeServicioSACColeccion.vb" />
+    <Compile Include="SAC\TipoGestionSAC.vb" />
+    <Compile Include="SAC\TipoGestionSACColeccion.vb" />
+    <Compile Include="SAC\UsuarioModuloSAC.vb" />
+    <Compile Include="SAC\UsuarioModuloSACColeccion.vb" />
+    <Compile Include="SAC\UsuarioPerfilUnidadNegocio.vb" />
+    <Compile Include="SAC\UsuarioTramitadorCasoSAC.vb" />
+    <Compile Include="SAC\UsuarioTramitadorCasoSACColeccion.vb" />
+    <Compile Include="Service References\referenciaws\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServicesPresence\request\EncabezadoCampaniaPresence.vb" />
+    <Compile Include="ServicesPresence\request\EncabezadoServiciosSalientes.vb" />
+    <Compile Include="ServicesPresence\request\MapFields.vb" />
+    <Compile Include="ServiciosPresence\CargadorArchivosGestionBaseClientesPrencece.vb" />
+    <Compile Include="ServiciosPresence\ConectorPresence.vb" />
+    <Compile Include="ServiciosPresence\ConectorPresenceDB.vb" />
+    <Compile Include="ServiciosPresence\InfoSesion.vb" />
+    <Compile Include="ServiciosPresence\OperacionesBD\OperacionesBD.vb" />
+    <Compile Include="ServiciosPresence\ResultadoCargaHabilitada.vb" />
+    <Compile Include="ServiciosPresence\ResultadoServiciosOutbound.vb" />
+    <Compile Include="ServiciosPresence\ResultadoToken.vb" />
+    <Compile Include="ServiciosPresence\webServicePresenceCarga.vb" />
+    <Compile Include="ServiciosPresence\WebServicesPresence.vb" />
+    <Compile Include="ServicioTecnico\CobroFabricante.vb" />
+    <Compile Include="ServicioTecnico\DetalleHistoricoServicioTecnico.vb" />
+    <Compile Include="ServicioTecnico\DetalleHistoricoServicioTecnicoColeccion.vb" />
+    <Compile Include="ServicioTecnico\DevolucionServicioTecnico.vb" />
+    <Compile Include="ServicioTecnico\wsCobroFabricante.vb" />
+    <Compile Include="ServicioTecnico\wsDevolucion.vb" />
+    <Compile Include="ServicioTecnico\wsHistoricoServicioTecnico.vb" />
+    <Compile Include="ServicioTecnico\wsHistoricoServicioTecnicoColeccion.vb" />
+    <Compile Include="ServicioTecnico\wsSerialCobroFabricante.vb" />
+    <Compile Include="ServicioTecnico\wsSerialCobroFabricanteColeccion.vb" />
+    <Compile Include="ServicioTecnico\wsSerialDevolucion.vb" />
+    <Compile Include="ServicioTecnico\wsSerialDevolucionColeccion.vb.vb" />
+    <Compile Include="SimpliRoute\RutasSimpleRout.vb" />
+    <Compile Include="SimpliRoute\SimpliRouteEntidad.vb" />
+    <Compile Include="Usuarios\CreacionDeUsuarios.vb" />
+    <Compile Include="Usuarios\CreacionUsuariosMasiva.vb" />
+    <Compile Include="Web References\com.logytechmobile.apps\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.officetrack.latam\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NotusExpressBancolombiaService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NotusExpressDaviviendaService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NotusExpressDavSamService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NotusExpressService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPAdicionDeclaracion\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPConsultarEntrega\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPConsultarInventario\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPConsultarSerial\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPContabilizacionEntrada\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPImpresionDocumentos\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPMaestroAlmacenes\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPPoolPedidos\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPZmmCapser\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SIDService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Fulfillment\DiagramaFulfillment.cd" />
+    <None Include="Inventario\DiagramaClasesInventario.cd" />
+    <None Include="MensajeriaEspecializada\Diagrama Clases Servicio Técnico.cd" />
+    <None Include="MensajeriaEspecializada\DiagramaClasesMensajeriaEspecializada.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="OMS\ClassDiagramMTN.cd" />
+    <None Include="OMS\ClassDiagramOMS.cd" />
+    <None Include="OMS\ClassDiagramOMSenvioSerialprueba.cd" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Pedidos\Pedidos.cd" />
+    <None Include="Recibos\dgRecibos.cd" />
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.AddCallDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.GetCallDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.GetErrorMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.GetServerTimeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.InsertOutboundRecord2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.InsertOutboundRecord3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.InsertOutboundRecord4Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.InsertOutboundRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.RefreshServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.RefreshTracersResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.ReloadOutboundQueuesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.RequestOutboundACDCall2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.RequestOutboundACDCall3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.RequestOutboundACDCallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.SumResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\ILSBusinessLayer.referenciaws.UnloadOutboundRecordResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\referenciaws\PcowsLibrary.wsdl" />
+    <None Include="Web References\com.logytechmobile.apps\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\com.logytechmobile.apps\WsOfficeTrack.wsdl" />
+    <None Include="Web References\com.officetrack.latam\CreateTaskReturnValues.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.officetrack.latam\ImportResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.officetrack.latam\ImportTaskItemActionsResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.officetrack.latam\ImportTaskResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.officetrack.latam\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\com.officetrack.latam\TaskManagement.wsdl" />
+    <None Include="Web References\com.officetrack.latam\UpdateTaskStatusResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\NotusExpressBancolombiaService\NotusExpressBancolombiaService.wsdl" />
+    <None Include="Web References\NotusExpressBancolombiaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\NotusExpressBancolombiaService\ResultadoProceso.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\NotusExpressDaviviendaService\NotusExpressDaviviendaWebService.wsdl" />
+    <None Include="Web References\NotusExpressDaviviendaService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\NotusExpressDaviviendaService\ResultadoProceso.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\NotusExpressDavSamService\NotusExpressDavSamService.wsdl" />
+    <None Include="Web References\NotusExpressDavSamService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\NotusExpressDavSamService\ResultadoProceso.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\NotusExpressService\NotusExpressService.wsdl" />
+    <None Include="Web References\NotusExpressService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\NotusExpressService\ResultadoProceso.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPAdicionDeclaracion\bindings.wsdl" />
+    <None Include="Web References\SAPAdicionDeclaracion\OutputLgAdicionDeclaracion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPAdicionDeclaracion\porttypes.wsdl" />
+    <None Include="Web References\SAPAdicionDeclaracion\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPAdicionDeclaracion\WS_ADICION_DECLARACION_LGWsd.wsdl" />
+    <None Include="Web References\SAPConsultarEntrega\bindings.wsdl" />
+    <None Include="Web References\SAPConsultarEntrega\OutputLgInvEntrega.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPConsultarEntrega\porttypes.wsdl" />
+    <None Include="Web References\SAPConsultarEntrega\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPConsultarEntrega\WS_INV_ENTREGA_LGWsd.wsdl" />
+    <None Include="Web References\SAPConsultarInventario\bindings.wsdl" />
+    <None Include="Web References\SAPConsultarInventario\OutputInvLg.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPConsultarInventario\porttypes.wsdl" />
+    <None Include="Web References\SAPConsultarInventario\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPConsultarInventario\WS_INVENTARIO_LGWsd.wsdl" />
+    <None Include="Web References\SAPConsultarSerial\bindings.wsdl" />
+    <None Include="Web References\SAPConsultarSerial\OutputLgInvSeriales.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPConsultarSerial\porttypes.wsdl" />
+    <None Include="Web References\SAPConsultarSerial\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPConsultarSerial\WS_INV_SERIALES_LGWsd.wsdl" />
+    <None Include="Web References\SAPContabilizacionEntrada\bindings.wsdl" />
+    <None Include="Web References\SAPContabilizacionEntrada\OutputContabLg.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPContabilizacionEntrada\porttypes.wsdl" />
+    <None Include="Web References\SAPContabilizacionEntrada\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPContabilizacionEntrada\WS_ENTRADAS_LGWsd.wsdl" />
+    <None Include="Web References\SAPImpresionDocumentos\bindings.wsdl" />
+    <None Include="Web References\SAPImpresionDocumentos\OutputLgPdf.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPImpresionDocumentos\porttypes.wsdl" />
+    <None Include="Web References\SAPImpresionDocumentos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPImpresionDocumentos\WS_PDF_LGWsd.wsdl" />
+    <None Include="Web References\SAPMaestroAlmacenes\bindings.wsdl" />
+    <None Include="Web References\SAPMaestroAlmacenes\OutputLgMaestroCentro.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroAlmacenes\porttypes.wsdl" />
+    <None Include="Web References\SAPMaestroAlmacenes\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPMaestroAlmacenes\WS_MAESTRO_CENTRO_LGWsd.wsdl" />
+    <None Include="Web References\SAPPoolPedidos\bindings.wsdl" />
+    <None Include="Web References\SAPPoolPedidos\OutputLg.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPPoolPedidos\porttypes.wsdl" />
+    <None Include="Web References\SAPPoolPedidos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPPoolPedidos\WS_PEDIDOS_LGWsd.wsdl" />
+    <None Include="Web References\SAPZmmCapser\bindings.wsdl" />
+    <None Include="Web References\SAPZmmCapser\OutputLgCapSer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPZmmCapser\porttypes.wsdl" />
+    <None Include="Web References\SAPZmmCapser\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPZmmCapser\WS_CAPSER_LGWsd.wsdl" />
+    <None Include="Web References\SIDService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SIDService\ResultadoProceso.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SIDService\SIDService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ArchivosAuxiliares\EstiloCorreo.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="References\GemBox.Spreadsheet.dll" />
+    <None Include="Service References\referenciaws\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\referenciaws\configuration.svcinfo" />
+    <None Include="Service References\referenciaws\configuration91.svcinfo" />
+    <None Include="Web References\com.logytechmobile.apps\WsOfficeTrack.disco" />
+    <None Include="Web References\com.officetrack.latam\TaskManagement.disco" />
+    <None Include="Web References\NotusExpressBancolombiaService\NotusExpressBancolombiaService.disco" />
+    <None Include="Web References\NotusExpressService\NotusExpressService.disco" />
+    <None Include="Web References\SIDService\SIDService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_ADICION_DECLARACION_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPAdicionDeclaracion\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_ADICION_DECLARACION_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPAdicionDeclaracion_WS_ADICION_DECLARACION_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_CAPSER_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPZmmCapser\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_CAPSER_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPZmmCapser_WS_CAPSER_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_ENTRADAS_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPContabilizacionEntrada\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_ENTRADAS_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPContabilizacionEntrada_WS_ENTRADAS_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_INVENTARIO_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPConsultarInventario\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_INVENTARIO_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPConsultarInventario_WS_INVENTARIO_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_INV_ENTREGA_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPConsultarEntrega\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_INV_ENTREGA_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPConsultarEntrega_WS_INV_ENTREGA_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_INV_SERIALES_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPConsultarSerial\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_INV_SERIALES_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPConsultarSerial_WS_INV_SERIALES_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_MAESTRO_CENTRO_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPMaestroAlmacenes\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_MAESTRO_CENTRO_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPMaestroAlmacenes_WS_MAESTRO_CENTRO_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_PDF_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPImpresionDocumentos\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_PDF_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPImpresionDocumentos_WS_PDF_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://172.22.85.60:50000/WS_PEDIDOS_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPPoolPedidos\</RelPath>
+      <UpdateFromURL>http://172.22.85.60:50000/WS_PEDIDOS_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SAPPoolPedidos_WS_PEDIDOS_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://apps.logytechmobile.com/NotusCemOfficeTrackWS/WsOfficeTrack.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.logytechmobile.apps\</RelPath>
+      <UpdateFromURL>http://apps.logytechmobile.com/NotusCemOfficeTrackWS/WsOfficeTrack.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_com_logytechmobile_apps_WsOfficeTrack</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://apps.logytechmobile.com/NotusExpress.Bancolombia/WebService/NotusExpressBancolombiaService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NotusExpressBancolombiaService\</RelPath>
+      <UpdateFromURL>http://apps.logytechmobile.com/NotusExpress.Bancolombia/WebService/NotusExpressBancolombiaService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_NotusExpressBancolombiaService_NotusExpressBancolombiaService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://latam.officetrack.com/services/TaskManagement.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.officetrack.latam\</RelPath>
+      <UpdateFromURL>https://latam.officetrack.com/services/TaskManagement.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_com_officetrack_latam_TaskManagement</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://colbogsa025.logytechmobile.com/NotusExpressDavivienda/WebService/NotusExpressService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NotusExpressService\</RelPath>
+      <UpdateFromURL>http://colbogsa025.logytechmobile.com/NotusExpressDavivienda/WebService/NotusExpressService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_NotusExpressService_NotusExpressService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SIDService\</RelPath>
+      <UpdateFromURL>http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_SIDService_SIDService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://appsfin.logytechmobile.com/NotusExpress.Davivienda/WebService/NotusExpressDaviviendaWebService.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NotusExpressDaviviendaService\</RelPath>
+      <UpdateFromURL>https://appsfin.logytechmobile.com/NotusExpress.Davivienda/WebService/NotusExpressDaviviendaWebService.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_NotusExpressDaviviendaService_NotusExpressDaviviendaWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://appsfin.logytechmobile.com/notusexpress.daviviendasamsung/webservice/NotusExpressDavSamService.asmx%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NotusExpressDavSamService\</RelPath>
+      <UpdateFromURL>https://appsfin.logytechmobile.com/notusexpress.daviviendasamsung/webservice/NotusExpressDavSamService.asmx%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ILSBusinessLayer_NotusExpressDavSamService_NotusExpressService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WebServiceProxies\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EncryptionClassLibrary\EncryptionClassLibrary.vbproj">
+      <Project>{693142d6-c97b-42f8-80f8-4481b5be652f}</Project>
+      <Name>EncryptionClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LMDataAccessLayer\LMDataAccessLayer.vbproj">
+      <Project>{0efbdbdb-3186-4e90-b167-f794d9f6d1db}</Project>
+      <Name>LMDataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LMMailSenderLibrary\LMMailSenderLibrary\LMMailSenderLibrary.vbproj">
+      <Project>{31eed092-6e89-4677-b409-24e299f778f5}</Project>
+      <Name>LMMailSenderLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LMWebServiceSyncMonitorBusinessLayer\LMWebServiceSyncMonitorBusinessLayer.vbproj">
+      <Project>{a7664dd4-d258-4d32-a907-fddeb4bafe8c}</Project>
+      <Name>LMWebServiceSyncMonitorBusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NotificacionEventos\NotificacionEventos\NotificacionEventos.vbproj">
+      <Project>{2516debc-a744-46d7-a89b-a86ce73f92ac}</Project>
+      <Name>NotificacionEventos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZebraPrinting\ZebraPrinting\ZebraPrinting.vbproj">
+      <Project>{a7598cd8-dbcc-45a3-a529-630693ff76e0}</Project>
+      <Name>ZebraPrinting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\referenciaws\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

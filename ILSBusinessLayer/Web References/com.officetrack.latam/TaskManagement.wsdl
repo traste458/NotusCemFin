@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="Trackem.Web.Services" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="Trackem.Web.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="Trackem.Web.Services">
+      <s:element name="UpdateTaskStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:UpdateTaskStatusRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateTaskStatusRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TaskNumber" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="Options" type="tns:UpdateTaskStatusOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="taskStatus" type="tns:Statuses" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="UpdateTaskStatusOptions">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="None" />
+              <s:enumeration value="SendNotificationToMobile" />
+              <s:enumeration value="SendNotificationToMobileDontChangeTaskStatus" />
+              <s:enumeration value="MaskSendAnyNotificationToMobile" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:simpleType name="Statuses">
+        <s:list>
+          <s:simpleType>
+            <s:restriction base="s:string">
+              <s:enumeration value="NotSet" />
+              <s:enumeration value="NewTask" />
+              <s:enumeration value="SmsSent" />
+              <s:enumeration value="Acknowledged" />
+              <s:enumeration value="InProgress" />
+              <s:enumeration value="Suspended" />
+              <s:enumeration value="Closed" />
+              <s:enumeration value="Canceled" />
+              <s:enumeration value="NotDone" />
+              <s:enumeration value="EnRoute" />
+              <s:enumeration value="Loading" />
+              <s:enumeration value="Unloading" />
+              <s:enumeration value="Draft" />
+              <s:enumeration value="Declined" />
+              <s:enumeration value="Arrived" />
+              <s:enumeration value="ReadyForReview" />
+            </s:restriction>
+          </s:simpleType>
+        </s:list>
+      </s:simpleType>
+      <s:element name="UpdateTaskStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTaskStatusResult" type="tns:UpdateTaskStatusResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateTaskStatusResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="tns:UpdateTaskStatusReturnValues" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="UpdateTaskStatusReturnValues">
+        <s:restriction base="s:string">
+          <s:enumeration value="OK" />
+          <s:enumeration value="InvalidUserNameOrPasswordOrIPAddress" />
+          <s:enumeration value="TaskNumberNotFound" />
+          <s:enumeration value="UnknownErrorHasoccurred" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CreateOrUpdateTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateOrUpdateTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateOrUpdateTaskResult" type="tns:CreateTaskReturnValues" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="CreateTaskReturnValues">
+        <s:restriction base="s:string">
+          <s:enumeration value="OK" />
+          <s:enumeration value="InvalidUserNameOrPasswordOrIPAddress" />
+          <s:enumeration value="InvalidEmployeeNumber" />
+          <s:enumeration value="InvalidCustomerNumber" />
+          <s:enumeration value="TaskNumberNotFound" />
+          <s:enumeration value="TaskCategoryCodeNotFound" />
+          <s:enumeration value="TaskNumberAlreadyExists" />
+          <s:enumeration value="InvalidRequest" />
+          <s:enumeration value="TaskTypeCodeNotFound" />
+          <s:enumeration value="TaskCreatedWithoutLocationAddressNotFound" />
+          <s:enumeration value="InvalidVin" />
+          <s:enumeration value="InvalidDistributionAreaNumber" />
+          <s:enumeration value="TaskCreatedWithoutLocationNoPermissionToGeocode" />
+          <s:enumeration value="TaskCreatedSomeErrorsEncounteredOnCreateCatalogItem" />
+          <s:enumeration value="InvalidWorkOrderNumber" />
+          <s:enumeration value="TaskCreatedWithoutBid" />
+          <s:enumeration value="UnknownErrorHasoccurred" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportTaskItemActions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:ImportTaskItemActionsRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportTaskItemActionsRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSource" type="tns:ImportDataSource" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnMapping" type="tns:ImportTaskItemActionsColumnMapping" />
+          <s:element minOccurs="0" maxOccurs="1" name="Options" type="tns:ImportTaskItemActionsOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportDataSource">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataString" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataFormat" type="tns:DataFormats" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstRowHasColumnNames" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="DataFormats">
+        <s:restriction base="s:string">
+          <s:enumeration value="Xls" />
+          <s:enumeration value="Xlsx" />
+          <s:enumeration value="Ods" />
+          <s:enumeration value="CsvCommaDelimited_Ansi" />
+          <s:enumeration value="CsvSemicolonDelimited_Ansi" />
+          <s:enumeration value="CsvTabDelimited_Ansi" />
+          <s:enumeration value="CsvCommaDelimited_Utf8" />
+          <s:enumeration value="CsvSemicolonDelimited_Utf8" />
+          <s:enumeration value="CsvTabDelimited_Utf8" />
+          <s:enumeration value="AutoDetect" />
+          <s:enumeration value="Xml" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ImportTaskItemActionsColumnMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaskNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CatalogItemActionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemCatalogNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportTaskItemActionsOptions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ItemsNotInFileOption" type="tns:ItemsNotInFileOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ItemsNotInFileOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="Delete" />
+          <s:enumeration value="Leave" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportTaskItemActionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportTaskItemActionsResult" type="tns:ImportTaskItemActionsResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportTaskItemActionsResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="tns:ImportTaskItemActionReturnValues" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowsImported" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowsRead" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataString" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataFormat" type="tns:DataFormats" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ImportTaskItemActionReturnValues">
+        <s:restriction base="s:string">
+          <s:enumeration value="OK" />
+          <s:enumeration value="InvalidUserNameOrPasswordOrIPAddress" />
+          <s:enumeration value="InvalidRequest" />
+          <s:enumeration value="InvalidDataFile" />
+          <s:enumeration value="InvalidColumnMapping" />
+          <s:enumeration value="SomeRowsSkipped" />
+          <s:enumeration value="UnknownErrorHasoccurred" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportTasks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:ImportTaskRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportTaskRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSource" type="tns:ImportDataSource" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnMapping" type="tns:ImportTaskColumnMapping" />
+          <s:element minOccurs="0" maxOccurs="1" name="Options" type="tns:ImportTaskOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportTaskColumnMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaskNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderInRoute" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistributionAreaNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Duration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoordinationPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoordinationPhone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="X" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Y" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data10" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data11" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data12" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data13" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data14" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data15" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data16" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data17" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data18" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data19" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data20" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data21" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data22" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data23" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data24" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data25" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data26" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data27" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data28" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data29" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data30" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalCreationDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AggregateNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderInAggregate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SendNotificationToMobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaximalRadiusForEntries" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProhibitEntriesOutsideRadius" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UseQuantityOnlyCatalogItemEntryForm" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeWindows" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeWindowPriority" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JointServiceTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LimitCatalogCategoriesSelectionToCodes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LimitCatalogItemsSelectionToCatalogNumbers" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoNotShowRefreshMessageInMobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AllowSelectionOfPrivateCatalogItemsRegardlessOfTaskLimitations" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Priority" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuantityOnlyFormShowOnlyCatalogNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskNumber_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerNumber_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistributionAreaNumber_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeNumber_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VIN_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDateTime_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Duration_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaskTypeCode_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoordinationPhone_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CoordinationPhone2_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="X_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Y_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data1_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data2_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data3_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data4_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data5_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data6_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data7_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data8_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data9_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data10_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data11_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data12_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data13_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data14_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data15_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data16_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data17_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data18_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data19_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data20_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data21_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data22_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data23_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data24_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data25_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data26_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data27_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data28_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data29_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data30_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExternalCreationDate_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity1_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity2_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity3_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity4_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Capacity5_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SendNotificationToMobile_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaximalRadiusForEntries_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProhibitEntriesOutsideRadius_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UseQuantityOnlyCatalogItemEntryForm_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeWindows_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeWindowPriority_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceTime_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="JointServiceTime_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LimitCatalogCategoriesSelectionToCodes_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LimitCatalogItemsSelectionToCatalogNumbers_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseNum_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DoNotShowRefreshMessageInMobile_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AllowSelectionOfPrivateCatalogItemsRegardlessOfTaskLimitations_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Priority_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuantityOnlyFormShowOnlyCatalogNumber_2" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportTaskOptions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TaskExistsOption" type="tns:TaskExistsOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="SendNotificationToMobile" type="tns:SendNotificationToMobileOptions" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoAddPickupOrDeliveryPrefixToTaskDescription" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateFormat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeFormat" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsePartialResolvedAddresses" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsePartialResolvedAddresses_2" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoAssignUnassignedTasksByTaskLocation" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AutoAssignDistributionAreaByTaskLocation" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TaskExistsOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="Update" />
+          <s:enumeration value="UpdateNewStatus" />
+          <s:enumeration value="DontTouch" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="SendNotificationToMobileOptions">
+        <s:restriction base="s:string">
+          <s:enumeration value="Yes" />
+          <s:enumeration value="No" />
+          <s:enumeration value="ByColumn" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportTasksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportTasksResult" type="tns:ImportTaskResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportTaskResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="tns:ImportTaskReturnValues" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowsImported" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowsRead" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataString" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataFormat" type="tns:DataFormats" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ImportTaskReturnValues">
+        <s:restriction base="s:string">
+          <s:enumeration value="OK" />
+          <s:enumeration value="InvalidUserNameOrPasswordOrIPAddress" />
+          <s:enumeration value="InvalidRequest" />
+          <s:enumeration value="InvalidDataFile" />
+          <s:enumeration value="InvalidColumnMapping" />
+          <s:enumeration value="SomeRowsSkipped" />
+          <s:enumeration value="UnknownErrorHasoccurred" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportSkills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:ImportSkillRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportSkillRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSource" type="tns:ImportDataSource" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnMapping" type="tns:ImportSkillColumnMapping" />
+          <s:element minOccurs="0" maxOccurs="1" name="Options" type="tns:ImportSkillOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportSkillColumnMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportSkillOptions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ItemsNotInFileOption" type="tns:ItemsNotInFileOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ImportSkillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportSkillsResult" type="tns:ImportResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="tns:ImportReturnValues" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowsImported" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RowsRead" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataString" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataFormat" type="tns:DataFormats" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ImportReturnValues">
+        <s:restriction base="s:string">
+          <s:enumeration value="OK" />
+          <s:enumeration value="InvalidUserNameOrPasswordOrIPAddress" />
+          <s:enumeration value="InvalidRequest" />
+          <s:enumeration value="InvalidDataFile" />
+          <s:enumeration value="InvalidColumnMapping" />
+          <s:enumeration value="SomeRowsSkipped" />
+          <s:enumeration value="MappingAttributeMissing" />
+          <s:enumeration value="UnknownErrorHasoccurred" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportTaskTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:ImportTaskTypeRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportTaskTypeRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSource" type="tns:ImportDataSource" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnMapping" type="tns:ImportTaskTypeColumnMapping" />
+          <s:element minOccurs="0" maxOccurs="1" name="Options" type="tns:ImportTaskTypeOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportTaskTypeColumnMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlannedTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Priority" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Skills" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddCatalogItemsToEntries" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutoOpenCloseTaskEntry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AutoOpenScanInCloseTaskEntry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookingTaskTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data6" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data7" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data8" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data9" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data10" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportTaskTypeOptions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ItemsNotInFileOption" type="tns:ItemsNotInFileOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ImportTaskTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportTaskTypesResult" type="tns:ImportResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportTaskItems">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Request" type="tns:ImportTaskItemRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ImportTaskItemRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DataSource" type="tns:ImportDataSource" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnMapping" type="tns:ImportTaskItemColumnMapping" />
+          <s:element minOccurs="0" maxOccurs="1" name="Options" type="tns:ImportTaskItemOptions" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntryTypesMapping" type="tns:ArrayOfMessageTypeMapping" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportTaskItemColumnMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TaskNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemCatalogNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SerialNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntryType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefaultQuantity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MinQuantity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaxQuantity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Highlight" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ImportTaskItemOptions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ItemsNotInFileOption" type="tns:ItemsNotInFileOptions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMessageTypeMapping">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessageTypeMapping" nillable="true" type="tns:MessageTypeMapping" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessageTypeMapping">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MessageType" type="tns:MessageTypes" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="MessageTypes">
+        <s:restriction base="s:string">
+          <s:enumeration value="MS_RequestConfig" />
+          <s:enumeration value="MS_RequestMDList" />
+          <s:enumeration value="MS_LocationResponse" />
+          <s:enumeration value="MS_ManagerLocationRequest" />
+          <s:enumeration value="MS_RequestTaskList" />
+          <s:enumeration value="MS_VerifyInvitationNumber" />
+          <s:enumeration value="MS_RequestGetURL" />
+          <s:enumeration value="MS_ApplicationIsOff" />
+          <s:enumeration value="MS_StatusMessage" />
+          <s:enumeration value="MS_RequestEMPList" />
+          <s:enumeration value="MS_EmergencyButtonPressed" />
+          <s:enumeration value="MS_RequestTaskList2" />
+          <s:enumeration value="MS_PunchIn" />
+          <s:enumeration value="MS_PunchOut" />
+          <s:enumeration value="MS_StartTask" />
+          <s:enumeration value="MS_EndTask" />
+          <s:enumeration value="MS_ConfirmTask" />
+          <s:enumeration value="MS_CloseTask" />
+          <s:enumeration value="MS_ConfirmAllTasks" />
+          <s:enumeration value="MS_EndAndCloseTask" />
+          <s:enumeration value="MS_TaskNotDone" />
+          <s:enumeration value="MS_DeclineTask" />
+          <s:enumeration value="MS_ArrivedToTask" />
+          <s:enumeration value="MS_TaskNotDoneConfirmation" />
+          <s:enumeration value="MS_TaskFormFilled" />
+          <s:enumeration value="MS_EnrouteToTask" />
+          <s:enumeration value="MS_TaskLoading" />
+          <s:enumeration value="MS_TaskUnloading" />
+          <s:enumeration value="MS_RescheduleTaskRequest" />
+          <s:enumeration value="MS_ReadyForReview" />
+          <s:enumeration value="MS_GetRouteToTask" />
+          <s:enumeration value="MS_ReassignTask" />
+          <s:enumeration value="MS_CustomerOrder" />
+          <s:enumeration value="MS_FormFilled" />
+          <s:enumeration value="MS_AcceptBid" />
+          <s:enumeration value="MS_RejectBid" />
+          <s:enumeration value="MS_BidReceivedByApp" />
+          <s:enumeration value="MS_BidViewed" />
+          <s:enumeration value="MS_TurnMobileAppOn" />
+          <s:enumeration value="MS_TurnMobileAppOff" />
+          <s:enumeration value="MS_TurnPrivacyOff" />
+          <s:enumeration value="MS_TurnPrivacyOn" />
+          <s:enumeration value="MS_EmergencyResponse" />
+          <s:enumeration value="MS_Vacation" />
+          <s:enumeration value="MS_MilitaryReserveDuty" />
+          <s:enumeration value="MS_Sickness" />
+          <s:enumeration value="MS_Free" />
+          <s:enumeration value="MS_Busy" />
+          <s:enumeration value="MS_OnCall" />
+          <s:enumeration value="MS_AmountSold" />
+          <s:enumeration value="MS_Training" />
+          <s:enumeration value="MS_ChildSickness" />
+          <s:enumeration value="MS_FloatingHoliday" />
+          <s:enumeration value="MS_UnusualEvent" />
+          <s:enumeration value="MS_OnCallStart" />
+          <s:enumeration value="MS_OnCallEnd" />
+          <s:enumeration value="MS_TripStart" />
+          <s:enumeration value="MS_TripEnd" />
+          <s:enumeration value="MS_WorkStart" />
+          <s:enumeration value="MS_WorkEnd" />
+          <s:enumeration value="MS_BreakStart" />
+          <s:enumeration value="MS_BreakEnd" />
+          <s:enumeration value="MS_AbsenceStart" />
+          <s:enumeration value="MS_AbsenceEnd" />
+          <s:enumeration value="MS_RequestTaskTypeList" />
+          <s:enumeration value="MS_RequestLayerList" />
+          <s:enumeration value="MS_RequestCustomerList" />
+          <s:enumeration value="MS_CreateTask" />
+          <s:enumeration value="MS_RequestTemplateList" />
+          <s:enumeration value="MS_RequestPlaceCategoryList" />
+          <s:enumeration value="MS_RequestPlaceList" />
+          <s:enumeration value="MS_RequestCatalog" />
+          <s:enumeration value="MS_RequestTransactionDelta" />
+          <s:enumeration value="MS_RequestTransactionDelta2" />
+          <s:enumeration value="MS_QueryTemporaryFileExists" />
+          <s:enumeration value="MS_AddTemporaryFile" />
+          <s:enumeration value="MS_ReorderTasks" />
+          <s:enumeration value="MS_OptimizeTaskRoute" />
+          <s:enumeration value="MS_QueryRouteOptimizeStatus" />
+          <s:enumeration value="MS_PrepareTaskExternalFileForDownload" />
+          <s:enumeration value="MS_QueryBid" />
+          <s:enumeration value="MS_AddTemporaryFileChunk" />
+          <s:enumeration value="MS_RequestMapSetData" />
+          <s:enumeration value="MS_ConvertCoordsToNativeCoords" />
+          <s:enumeration value="MS_RequestVehicleInputsList" />
+          <s:enumeration value="MS_RequestNewSequentialNumber" />
+          <s:enumeration value="MS_RequestAttendanceLog" />
+          <s:enumeration value="MS_RequestMdListWithAssociatedObjects" />
+          <s:enumeration value="MS_UpdateEmployeeDetails" />
+          <s:enumeration value="MS_RequestCityList" />
+          <s:enumeration value="MS_RequestStreetList" />
+          <s:enumeration value="MS_RequestPoiList" />
+          <s:enumeration value="MS_AddPoi" />
+          <s:enumeration value="MS_UpdatePoi" />
+          <s:enumeration value="MS_DeletePoi" />
+          <s:enumeration value="MS_RequestGeoCode" />
+          <s:enumeration value="MS_RequestProximityAlertsList" />
+          <s:enumeration value="MS_AddProximityAlert" />
+          <s:enumeration value="MS_UpdateProximityAlert" />
+          <s:enumeration value="MS_DeleteProximityAlert" />
+          <s:enumeration value="MS_RequestCompanyWorkHours" />
+          <s:enumeration value="MS_UpdateCompanyWorkHours" />
+          <s:enumeration value="MS_UpdateVehicleDetails" />
+          <s:enumeration value="MS_UpdateEmployeeDetails2" />
+          <s:enumeration value="MS_RequestMdListWithAssociatedObjects2" />
+          <s:enumeration value="MS_UnknownInputEvent" />
+          <s:enumeration value="MS_OdometerValue" />
+          <s:enumeration value="MS_TurnEngineOn" />
+          <s:enumeration value="MS_TurnEngineOff" />
+          <s:enumeration value="MS_FuelGaugeValue" />
+          <s:enumeration value="MS_EngineTemperature" />
+          <s:enumeration value="MS_TrunkTemperature" />
+          <s:enumeration value="MS_SmokeLevel" />
+          <s:enumeration value="MS_LiftingAlertOn" />
+          <s:enumeration value="MS_LiftingAlertOff" />
+          <s:enumeration value="MS_DoorsLocked" />
+          <s:enumeration value="MS_DoorsUnlocked" />
+          <s:enumeration value="MS_DoorOpenAlertOn" />
+          <s:enumeration value="MS_DoorOpenAlertOff" />
+          <s:enumeration value="MS_FuelTheftAlertOff" />
+          <s:enumeration value="MS_FuelingAlertOff" />
+          <s:enumeration value="MS_FuelTheftAlertOn" />
+          <s:enumeration value="MS_FuelingAlertOn" />
+          <s:enumeration value="MS_SpeedGaugeValue" />
+          <s:enumeration value="MS_CraneOn" />
+          <s:enumeration value="MS_CraneOff" />
+          <s:enumeration value="MS_UnitStandingTime" />
+          <s:enumeration value="MS_UnitStartMoving" />
+          <s:enumeration value="MS_GpsReceptionOn" />
+          <s:enumeration value="MS_GpsReceptionOff" />
+          <s:enumeration value="MS_CarBatteryDisconnected" />
+          <s:enumeration value="MS_CarBatteryConnected" />
+          <s:enumeration value="MS_AlarmCounterValue" />
+          <s:enumeration value="MS_UnitStandingTimeWithEngineOn" />
+          <s:enumeration value="MS_ServicePerformed" />
+          <s:enumeration value="MS_SirenActivated" />
+          <s:enumeration value="MS_AlarmArmed" />
+          <s:enumeration value="MS_AlarmDisarmed" />
+          <s:enumeration value="MS_IgnitionAttemptWithoutDriverID" />
+          <s:enumeration value="MS_SirenDeactivated" />
+          <s:enumeration value="MS_BatteryVoltage" />
+          <s:enumeration value="MS_ConnectionToExternalUnitDown" />
+          <s:enumeration value="MS_ConnectionToExternalUnitUp" />
+          <s:enumeration value="MS_Accident" />
+          <s:enumeration value="MS_PumpOn" />
+          <s:enumeration value="MS_PumpOff" />
+          <s:enumeration value="MS_InternalTemperature" />
+          <s:enumeration value="MS_ExternalTemperature" />
+          <s:enumeration value="MS_FuelTankIsFullOn" />
+          <s:enumeration value="MS_FuelTankIsFullOff" />
+          <s:enumeration value="MS_FuelTankIsEmptyOn" />
+          <s:enumeration value="MS_FuelTankIsEmptyOff" />
+          <s:enumeration value="MS_CanbusIdleTime" />
+          <s:enumeration value="MS_CanbusAverageRPM" />
+          <s:enumeration value="MS_CanbusTotalAccelerations" />
+          <s:enumeration value="MS_CanbusTotalDecelerations" />
+          <s:enumeration value="MS_CanbusTotalFuelUsed" />
+          <s:enumeration value="MS_CanbusTotalEngineHours" />
+          <s:enumeration value="MS_CanbusNumOfClutch" />
+          <s:enumeration value="MS_CanbusNumOfBreak" />
+          <s:enumeration value="MS_CanbusConnectionOn" />
+          <s:enumeration value="MS_CanbusConnectionOff" />
+          <s:enumeration value="MS_InvalidDriverIdEntered" />
+          <s:enumeration value="MS_JammerDetected" />
+          <s:enumeration value="MS_JammerUndetected" />
+          <s:enumeration value="MS_UnitStartStanding" />
+          <s:enumeration value="MS_UnitStartStandingWithEngineOn" />
+          <s:enumeration value="MS_DriverIdSet" />
+          <s:enumeration value="MS_DriverIdUnset" />
+          <s:enumeration value="MS_TripType_Private" />
+          <s:enumeration value="MS_TripType_Business" />
+          <s:enumeration value="MS_TripType_Transfer" />
+          <s:enumeration value="MS_TurnIgnitionSwitchOn" />
+          <s:enumeration value="MS_TurnIgnitionSwitchOff" />
+          <s:enumeration value="MS_UnitStartStandingWithIgnitionSwitchOn" />
+          <s:enumeration value="MS_UnitStandingTimeWithIgnitionSwitchOn" />
+          <s:enumeration value="MS_MainBatteryDisconnected" />
+          <s:enumeration value="MS_MainBatteryConnected" />
+          <s:enumeration value="MS_AlarmOn" />
+          <s:enumeration value="MS_AlarmOff" />
+          <s:enumeration value="MS_BatteryLowAlertOn" />
+          <s:enumeration value="MS_BatteryLowAlertOff" />
+          <s:enumeration value="MS_BackupBatteryLowAlertOn" />
+          <s:enumeration value="MS_BackupBatteryLowAlertOff" />
+          <s:enumeration value="MS_InvalidAlarmCodeEntered" />
+          <s:enumeration value="MS_StartCallEmergencyPhone" />
+          <s:enumeration value="MS_EndCallEmergencyPhone" />
+          <s:enumeration value="MS_StartCallToCallCenter" />
+          <s:enumeration value="MS_EndCallToCallCenter" />
+          <s:enumeration value="MS_StartCallToUserPhone1" />
+          <s:enumeration value="MS_EndCallToUserPhone1" />
+          <s:enumeration value="MS_StartCallToUserPhone2" />
+          <s:enumeration value="MS_EndCallToUserPhone2" />
+          <s:enumeration value="MS_LiquidLevelInTank" />
+          <s:enumeration value="MS_TurnHeadlightsOn" />
+          <s:enumeration value="MS_TurnHeadlightsOff" />
+          <s:enumeration value="MS_FrontRightDoorOpen" />
+          <s:enumeration value="MS_FrontRightDoorClosed" />
+          <s:enumeration value="MS_FrontLeftDoorOpen" />
+          <s:enumeration value="MS_FrontLeftDoorClosed" />
+          <s:enumeration value="MS_RearRightDoorOpen" />
+          <s:enumeration value="MS_RearRightDoorClosed" />
+          <s:enumeration value="MS_RearLeftDoorOpen" />
+          <s:enumeration value="MS_RearLeftDoorClosed" />
+          <s:enumeration value="MS_TrunkDoorOpen" />
+          <s:enumeration value="MS_TrunkDoorClosed" />
+          <s:enumeration value="MS_LeftSlideDoorOpen" />
+          <s:enumeration value="MS_LeftSlideDoorClosed" />
+          <s:enumeration value="MS_RightSlideDoorOpen" />
+          <s:enumeration value="MS_RightSlideDoorClosed" />
+          <s:enumeration value="MS_BackDoorOpen" />
+          <s:enumeration value="MS_BackDoorClosed" />
+          <s:enumeration value="MS_SafeDoorOpen" />
+          <s:enumeration value="MS_SafeDoorClosed" />
+          <s:enumeration value="MS_SeismicShockAlertOn" />
+          <s:enumeration value="MS_EngineCurrentStatusOn" />
+          <s:enumeration value="MS_EngineCurrentStatusOff" />
+          <s:enumeration value="MS_Last5DigitsOfEmployeeNumberInHex" />
+          <s:enumeration value="MS_MultiInputMessage" />
+          <s:enumeration value="MS_LogStart" />
+          <s:enumeration value="MS_LogEnd" />
+          <s:enumeration value="MS_SetMyCMID" />
+          <s:enumeration value="MS_IncomingProvisioningMessagesFromMobile" />
+          <s:enumeration value="MS_CLOSEEMERGENCY" />
+          <s:enumeration value="MS_PROXIMITYALERTACTIVATION" />
+          <s:enumeration value="MS_CONTROLMESSAGE" />
+          <s:enumeration value="MS_DEBUG" />
+          <s:enumeration value="MS_UNKNOWN" />
+          <s:enumeration value="MS_UNKNOWN2" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportTaskItemsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportTaskItemsResult" type="tns:ImportResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTaskReturnValues" type="tns:CreateTaskReturnValues" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateTaskStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTaskStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTaskStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrUpdateTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateTask" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrUpdateTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateOrUpdateTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportTaskItemActionsSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportTaskItemActions" />
+  </wsdl:message>
+  <wsdl:message name="ImportTaskItemActionsSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportTaskItemActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportTasksSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportTasks" />
+  </wsdl:message>
+  <wsdl:message name="ImportTasksSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportTasksResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportSkillsSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportSkills" />
+  </wsdl:message>
+  <wsdl:message name="ImportSkillsSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportSkillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportTaskTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportTaskTypes" />
+  </wsdl:message>
+  <wsdl:message name="ImportTaskTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportTaskTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportTaskItemsSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportTaskItems" />
+  </wsdl:message>
+  <wsdl:message name="ImportTaskItemsSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportTaskItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrUpdateTaskHttpGetIn">
+    <wsdl:part name="Request" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrUpdateTaskHttpGetOut">
+    <wsdl:part name="Body" element="tns:CreateTaskReturnValues" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrUpdateTaskHttpPostIn">
+    <wsdl:part name="Request" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateOrUpdateTaskHttpPostOut">
+    <wsdl:part name="Body" element="tns:CreateTaskReturnValues" />
+  </wsdl:message>
+  <wsdl:portType name="TaskManagementSoap">
+    <wsdl:operation name="UpdateTaskStatus">
+      <wsdl:input message="tns:UpdateTaskStatusSoapIn" />
+      <wsdl:output message="tns:UpdateTaskStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateTask">
+      <wsdl:input message="tns:CreateOrUpdateTaskSoapIn" />
+      <wsdl:output message="tns:CreateOrUpdateTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskItemActions">
+      <wsdl:input message="tns:ImportTaskItemActionsSoapIn" />
+      <wsdl:output message="tns:ImportTaskItemActionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTasks">
+      <wsdl:input message="tns:ImportTasksSoapIn" />
+      <wsdl:output message="tns:ImportTasksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportSkills">
+      <wsdl:input message="tns:ImportSkillsSoapIn" />
+      <wsdl:output message="tns:ImportSkillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskTypes">
+      <wsdl:input message="tns:ImportTaskTypesSoapIn" />
+      <wsdl:output message="tns:ImportTaskTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskItems">
+      <wsdl:input message="tns:ImportTaskItemsSoapIn" />
+      <wsdl:output message="tns:ImportTaskItemsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TaskManagementHttpGet">
+    <wsdl:operation name="CreateOrUpdateTask">
+      <wsdl:input message="tns:CreateOrUpdateTaskHttpGetIn" />
+      <wsdl:output message="tns:CreateOrUpdateTaskHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TaskManagementHttpPost">
+    <wsdl:operation name="CreateOrUpdateTask">
+      <wsdl:input message="tns:CreateOrUpdateTaskHttpPostIn" />
+      <wsdl:output message="tns:CreateOrUpdateTaskHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaskManagementSoap" type="tns:TaskManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTaskStatus">
+      <soap:operation soapAction="Trackem.Web.Services/UpdateTaskStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateTask">
+      <soap:operation soapAction="Trackem.Web.Services/CreateOrUpdateTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskItemActions">
+      <soap:operation soapAction="Trackem.Web.Services/ImportTaskItemActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTasks">
+      <soap:operation soapAction="Trackem.Web.Services/ImportTasks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportSkills">
+      <soap:operation soapAction="Trackem.Web.Services/ImportSkills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskTypes">
+      <soap:operation soapAction="Trackem.Web.Services/ImportTaskTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskItems">
+      <soap:operation soapAction="Trackem.Web.Services/ImportTaskItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskManagementSoap12" type="tns:TaskManagementSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTaskStatus">
+      <soap12:operation soapAction="Trackem.Web.Services/UpdateTaskStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOrUpdateTask">
+      <soap12:operation soapAction="Trackem.Web.Services/CreateOrUpdateTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskItemActions">
+      <soap12:operation soapAction="Trackem.Web.Services/ImportTaskItemActions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTasks">
+      <soap12:operation soapAction="Trackem.Web.Services/ImportTasks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportSkills">
+      <soap12:operation soapAction="Trackem.Web.Services/ImportSkills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskTypes">
+      <soap12:operation soapAction="Trackem.Web.Services/ImportTaskTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportTaskItems">
+      <soap12:operation soapAction="Trackem.Web.Services/ImportTaskItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskManagementHttpGet" type="tns:TaskManagementHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CreateOrUpdateTask">
+      <http:operation location="/CreateOrUpdateTask" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskManagementHttpPost" type="tns:TaskManagementHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CreateOrUpdateTask">
+      <http:operation location="/CreateOrUpdateTask" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaskManagement">
+    <wsdl:port name="TaskManagementSoap" binding="tns:TaskManagementSoap">
+      <soap:address location="https://latam.officetrack.com/services/TaskManagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskManagementSoap12" binding="tns:TaskManagementSoap12">
+      <soap12:address location="https://latam.officetrack.com/services/TaskManagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskManagementHttpGet" binding="tns:TaskManagementHttpGet">
+      <http:address location="https://latam.officetrack.com/services/TaskManagement.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskManagementHttpPost" binding="tns:TaskManagementHttpPost">
+      <http:address location="https://latam.officetrack.com/services/TaskManagement.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

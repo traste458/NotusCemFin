@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://colbogsa025.logytechmobile.com/NotusExpressDavivienda/WebService/NotusExpressService.asmx?wsdl" docRef="http://colbogsa025.logytechmobile.com/NotusExpressDavivienda/WebService/NotusExpressService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://colbogsa025.logytechmobile.com/NotusExpressDavivienda/WebService/NotusExpressService.asmx" xmlns:q1="http://www.logytechmobile.com/NotusExpressWebService/" binding="q1:NotusExpressServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://colbogsa025.logytechmobile.com/NotusExpressDavivienda/WebService/NotusExpressService.asmx" xmlns:q2="http://www.logytechmobile.com/NotusExpressWebService/" binding="q2:NotusExpressServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

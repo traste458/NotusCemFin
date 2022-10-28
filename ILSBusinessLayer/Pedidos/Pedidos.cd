@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ILSBusinessLayer.Pedidos.Pedido">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAQACAgAAICAAAAAgBUAAAAAIAAIAACAhAgUAAA=</HashCode>
+      <FileName>Pedidos\Pedido.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Pedidos.TipoPedido">
+    <Position X="3" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAACAAAAAgAAAAAABAAAAAAAAAAoUAAA=</HashCode>
+      <FileName>Pedidos\TipoPedido.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Pedidos.DetallePedido">
+    <Position X="2.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAUIAEACAAAAIEAAAAAgRGAAACAAAAISABAAAAAAAA=</HashCode>
+      <FileName>Pedidos\DetallePedido.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Pedidos.Picking">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAEAKAgAAAgAAAAAgBEAAgAAAAAAQESAAIgBAAA=</HashCode>
+      <FileName>Pedidos\Picking.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Pedidos.DetallePicking">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQYAEEEAAAAEABIABAAAAAAkCJAAAEgAEAABAAAAA=</HashCode>
+      <FileName>Pedidos\DetallePicking.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Destinatarios">
+    <Position X="9.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABAACgAgAAACAAACAAAAAAAgBAAIAAAAAhAAAAAg=</HashCode>
+      <FileName>Comunes\Destinatarios.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

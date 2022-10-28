@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LMMailSenderLibrary", "LMMailSenderLibrary\LMMailSenderLibrary.vbproj", "{31EED092-6E89-4677-B409-24E299F778F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31EED092-6E89-4677-B409-24E299F778F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31EED092-6E89-4677-B409-24E299F778F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31EED092-6E89-4677-B409-24E299F778F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31EED092-6E89-4677-B409-24E299F778F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {5B8834DA-4061-41E1-86D6-AFC1E5B11D6C}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://colbogsa036:8080/tfs/logytechmobile
+		SccProjectUniqueName0 = LMMailSenderLibrary\\LMMailSenderLibrary.vbproj
+		SccProjectName0 = LMMailSenderLibrary
+		SccAuxPath0 = http://colbogsa036:8080/tfs/logytechmobile
+		SccLocalPath0 = LMMailSenderLibrary
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+EndGlobal

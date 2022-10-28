@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ILSBusinessLayer.DetalleSerialServicioMensajeria">
+    <Position X="4" Y="1" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>kmBgQIAASAYJAAAUREBIIAUAAFRABACACEgSZArABAA=</HashCode>
+      <FileName>MensajeriaEspecializada\DetalleSerialServicioMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.DetalleSerialServicioMensajeriaColeccion">
+    <Position X="4" Y="3.75" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAABAAEFAMAAEAIAAAAAAAAAIAAIAAAA=</HashCode>
+      <FileName>MensajeriaEspecializada\DetalleSerialServicioMensajeriaColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.MensajeriaEspecializada.ServicioMensajeria">
+    <Position X="7.25" Y="1" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>FNIMZ/wSbQwgIisixvlAZe9ElYIyXVqJwMkZdc2muC4=</HashCode>
+      <FileName>MensajeriaEspecializada\ServicioMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.ItemBodegaSatelite">
+    <Position X="15" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EkCAYKQVIQk4CEaAEEAjKQAAAJACCATiPAAAIQiSBEU=</HashCode>
+      <FileName>Inventario\ItemBodegaSatelite.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.InventarioBodegaSateliteColeccion">
+    <Position X="17.5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AkAAgKAQIAsAAQZSAEFDMQAAAJAAwAKADAAICYiABgA=</HashCode>
+      <FileName>Inventario\InventarioBodegaSateliteColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.BloqueoInventario">
+    <Position X="12.5" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AKAAAAQAwAiDAABAABACACQKAoAAAQAIBICQAQigQAY=</HashCode>
+      <FileName>Inventario\BloqueoInventario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.MensajeriaEspecializada.RutaServicioMensajeria">
+    <Position X="10.5" Y="3.75" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="ILSBusinessLayer.MensajeriaEspecializada.RutaServicioMensajeria.FiltroRutaMensajeria" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MensajeriaEspecializada\RutaServicioMensajeria.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EgAAABAAIAgEAEACAAYIJAAAIAAjiAAIAAEAIQzBIAQ=</HashCode>
+      <FileName>MensajeriaEspecializada\RutaServicioMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.MensajeriaEspecializada.RutaRecoleccionServicioMensajeria">
+    <Position X="14" Y="3.75" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="ILSBusinessLayer.MensajeriaEspecializada.RutaRecoleccionServicioMensajeria.FiltroRutaMensajeria" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MensajeriaEspecializada\RutaServicioMensajeria.vb</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EgAAABAAIAgEAEACAAYIJAAAIAAjiAAIAAEAIQzBIAQ=</HashCode>
+      <FileName>MensajeriaEspecializada\RutaServicioMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LMWebServiceSyncMonitorBusinessLayer</RootNamespace>
+    <AssemblyName>LMWebServiceSyncMonitorBusinessLayer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <OptionExplicit>Off</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>LMWebServiceSyncMonitorBusinessLayer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LMWebServiceSyncMonitorBusinessLayer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GemBox.Spreadsheet">
+      <HintPath>..\..\..\..\LibreriasClase\CodigoFuente\Base\UtilidadesDDL\GemBox.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comunes\GeneradorCredencialesWebService.vb" />
+    <Compile Include="Comunes\InfoUrlWebService.vb" />
+    <Compile Include="Comunes\MetodosComunes.vb" />
+    <Compile Include="Comunes\NotificacionConfiguracion.vb" />
+    <Compile Include="Comunes\ResultadoProceso.vb" />
+    <Compile Include="Destinatarios\SincronizadorDestinatario.vb" />
+    <Compile Include="Inventario\SincronizadorInventarioPorStock.vb" />
+    <Compile Include="Materiales\SincronizadorMaestroMateriales.vb" />
+    <Compile Include="Almacenes\SincronizadorMaestroDeAlmacenes.vb" />
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\PuestosColeccion.vb" />
+    <Compile Include="Pedidos\SincronizadorPoolPedido.vb" />
+    <Compile Include="ListaPrecio\SincronizadorListaPrecio.vb" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="Web References\SAPConsultarInventario\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPMaestroAlmacenes\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPMaestroDestinatarios\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPMaestroListaPrecio\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPMaestroMateriales\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAPPoolPedidos\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPConsultarInventario\bindings.wsdl" />
+    <None Include="Web References\SAPConsultarInventario\OutputInvLg.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPConsultarInventario\porttypes.wsdl" />
+    <None Include="Web References\SAPConsultarInventario\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPConsultarInventario\WS_INVENTARIO_LGWsd.wsdl" />
+    <None Include="Web References\SAPMaestroAlmacenes\bindings.wsdl" />
+    <None Include="Web References\SAPMaestroAlmacenes\OutputLgMaestroCentro.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroAlmacenes\OutputLgMaestroCentro1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroAlmacenes\porttypes.wsdl" />
+    <None Include="Web References\SAPMaestroAlmacenes\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPMaestroAlmacenes\WS_MAESTRO_CENTRO_LGWsd.wsdl" />
+    <None Include="Web References\SAPMaestroDestinatarios\bindings.wsdl" />
+    <None Include="Web References\SAPMaestroDestinatarios\OutputLgMaestroDestinatario.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroDestinatarios\OutputLgMaestroDestinatario1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroDestinatarios\porttypes.wsdl" />
+    <None Include="Web References\SAPMaestroDestinatarios\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPMaestroDestinatarios\WS_MAESTRO_DESTINATARIO_LGWsd.wsdl" />
+    <None Include="Web References\SAPMaestroListaPrecio\bindings.wsdl" />
+    <None Include="Web References\SAPMaestroListaPrecio\OutputLgMaestroLprecios.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroListaPrecio\OutputLgMaestroLprecios1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroListaPrecio\porttypes.wsdl" />
+    <None Include="Web References\SAPMaestroListaPrecio\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPMaestroListaPrecio\WS_MAESTRO_LPRECIOS_LGWsd.wsdl" />
+    <None Include="Web References\SAPMaestroMateriales\bindings.wsdl" />
+    <None Include="Web References\SAPMaestroMateriales\OutputLgMaestroMaterial.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroMateriales\OutputLgMaestroMaterial1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPMaestroMateriales\porttypes.wsdl" />
+    <None Include="Web References\SAPMaestroMateriales\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPMaestroMateriales\WS_MAESTRO_MATERIAL_LGWsd.wsdl" />
+    <None Include="Web References\SAPPoolPedidos\bindings.wsdl" />
+    <None Include="Web References\SAPPoolPedidos\OutputLg.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPPoolPedidos\OutputLg1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAPPoolPedidos\porttypes.wsdl" />
+    <None Include="Web References\SAPPoolPedidos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\SAPPoolPedidos\WS_PEDIDOS_LGWsd.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://wsappro01:50000/WS_INVENTARIO_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPConsultarInventario\</RelPath>
+      <UpdateFromURL>http://wsappro01:50000/WS_INVENTARIO_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>LMWebServiceSyncMonitorBusinessLayer_SAPConsultarInventario_WS_INVENTARIO_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wsappro01:50000/WS_MAESTRO_CENTRO_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPMaestroAlmacenes\</RelPath>
+      <UpdateFromURL>http://wsappro01:50000/WS_MAESTRO_CENTRO_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>LMWebServiceSyncMonitorBussinessLayer_SAPMaestroAlmacenes_WS_MAESTRO_CENTRO_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wsappro01:50000/WS_MAESTRO_DESTINATARIO_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPMaestroDestinatarios\</RelPath>
+      <UpdateFromURL>http://wsappro01:50000/WS_MAESTRO_DESTINATARIO_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>LMWebServiceSyncMonitorBussinessLayer_SAPMaestroDestinatarios_WS_MAESTRO_DESTINATARIO_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wsappro01:50000/WS_MAESTRO_LPRECIOS_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPMaestroListaPrecio\</RelPath>
+      <UpdateFromURL>http://wsappro01:50000/WS_MAESTRO_LPRECIOS_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>LMWebServiceSyncMonitorBusinessLayer_SAPMaestroListaPrecio_WS_MAESTRO_LPRECIOS_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wsappro01:50000/WS_MAESTRO_MATERIAL_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPMaestroMateriales\</RelPath>
+      <UpdateFromURL>http://wsappro01:50000/WS_MAESTRO_MATERIAL_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>LMWebServiceSyncMonitorBussinessLayer_SAPMaestroMateriales_WS_MAESTRO_MATERIAL_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://wsappro01:50000/WS_PEDIDOS_LG/Config1%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAPPoolPedidos\</RelPath>
+      <UpdateFromURL>http://wsappro01:50000/WS_PEDIDOS_LG/Config1%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>LMWebServiceSyncMonitorBussinessLayer_SAPPoolPedidos_WS_PEDIDOS_LG</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\LibreriasClase\CodigoFuente\Base\NotificacionEventos\NotificacionEventos\NotificacionEventos.vbproj">
+      <Project>{2516debc-a744-46d7-a89b-a86ce73f92ac}</Project>
+      <Name>NotificacionEventos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\LibreriasClase\CodigoFuente\Base\LMDataAccessLayer\LMDataAccessLayer.vbproj">
+      <Project>{0efbdbdb-3186-4e90-b167-f794d9f6d1db}</Project>
+      <Name>LMDataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\LibreriasClase\CodigoFuente\Base\LMMailSenderLibrary\LMMailSenderLibrary\LMMailSenderLibrary.vbproj">
+      <Project>{31eed092-6e89-4677-b409-24e299f778f5}</Project>
+      <Name>LMMailSenderLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZebraPrinting\ZebraPrinting\ZebraPrinting.vbproj">
+      <Project>{a7598cd8-dbcc-45a3-a529-630693ff76e0}</Project>
+      <Name>ZebraPrinting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

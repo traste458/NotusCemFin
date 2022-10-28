@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ILSBusinessLayer_SIDService1_SIDService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SAPAdicionDeclaracion_WS_ADICION_DECLARACION_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_ADICION_DECLARACION_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SAPConsultarEntrega_WS_INV_ENTREGA_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_INV_ENTREGA_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SAPConsultarInventario_WS_INVENTARIO_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_INVENTARIO_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SapConsultarSerial_WS_INV_SERIALES_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_INV_SERIALES_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SAPContabilizacionEntrada_WS_ENTRADAS_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_ENTRADAS_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SAPImpresionDocumentos_WS_PDF_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_PDF_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SAPMaestroAlmacenes_WS_MAESTRO_CENTRO_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_MAESTRO_CENTRO_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SapPoolPedidos_WS_PEDIDOS_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_PEDIDOS_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SAPZmmCapser_WS_CAPSER_LG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://172.22.85.60:50000/WS_CAPSER_LG/Config1?style=document</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_SIDService_SIDService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://lmwebserver.logytechmobile.com/sid/WebService/SIDService.asmx</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_NotusExpressService_NotusExpressService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://colbogsa025.logytechmobile.com/NotusExpressDavivienda/WebService/NotusExpressService.asmx</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_NotusExpressBancolombiaService_NotusExpressBancolombiaService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://apps.logytechmobile.com/NotusExpress.Bancolombia/WebService/NotusExpressBancolombiaService.asmx</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_NotusExpressDaviviendaService_NotusExpressDaviviendaWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://appsfin.logytechmobile.com/NotusExpress.Davivienda/WebService/NotusExpressDaviviendaWebService.asmx</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_NotusExpressDavSamService_NotusExpressService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://appsfin.logytechmobile.com/notusexpress.daviviendasamsung/webservice/NotusExpressDavSamService.asmx</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_com_officetrack_latam_TaskManagement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://latam.officetrack.com/services/TaskManagement.asmx</Value>
+    </Setting>
+    <Setting Name="ILSBusinessLayer_com_logytechmobile_apps_WsOfficeTrack" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://apps.logytechmobile.com/NotusCemOfficeTrackWS/WsOfficeTrack.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,1388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:PcowsLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="PcowsLibrary" targetNamespace="urn:PcowsLibrary" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:PcowsLibrary">
+      <xs:element name="PcowsService___AddCallData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service where the contact to which data will be added is.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ACallId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the call associated with the contact.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AKey" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Name/Key of the variable to identify the data that will be added. The maximum
+length value for this parameter is 30 characters.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AValue" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Value that will be added. The maximum length value for this parameter is
+250 characters.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___AddCallDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___GetCallData">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service where the contact from which the value of the attached
+variable will be retrieved is.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ACallId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the call associated with the contact.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AKey" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Name/Key of the variable to identify the data that will be retrieved. The
+maximum length value for this parameter is 30 characters.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AValue" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Value of the retrieved variable.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___GetCallDataResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+            <xs:element minOccurs="1" maxOccurs="1" name="AValue" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Value of the retrieved variable.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___GetErrorMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AErrorCode" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Code that the error message will be retrieved from.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___GetErrorMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___GetServerTime">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="PcowsService___GetServerTimeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:dateTime" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___InsertOutboundRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service for which the record will be inserted.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ALoadId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the load into which the record will be included.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ASourceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Client Id used by the application handling the service. Valid values range
+from 1 to 2147483647 inclusive.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AName" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's name.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="APhone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's phone number.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AStatus" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Record initial status:
+1: Record not scheduled (call as initial).
+2: Record scheduled to a set date and time.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AScheduleDate" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>
+                  Date and time for the scheduling. Only if the Status parameter is set to 2.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ACapturingAgent" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Capturing agent login.
+If the value is 0, the outbound record is not captured by any agent.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="APriority" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Record priority.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AComments" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Record comments.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___InsertOutboundRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___InsertOutboundRecord2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service for which the record will be inserted.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ALoadId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the load into which the record will be included.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ASourceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Client Id used by the application handling the service. Valid values range
+from 1 to 2147483647 inclusive.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AName" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's name.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="APhone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's phone number.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AStatus" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Record initial status:
+1: Record not scheduled (call as initial).
+2: Record scheduled to a set date and time.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AScheduleDate" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>
+                  Date and time for the scheduling. Only if the Status parameter is set to 2.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ACapturingAgent" type="xs:long">
+              <xs:annotation>
+                <xs:documentation>
+                  Capturing agent login.
+If the value is 0, the outbound record is not captured by any agent.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="APriority" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Record priority.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AComments" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Record comments.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___InsertOutboundRecord2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___InsertOutboundRecord3">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service for which the record will be inserted.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="LoadId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the load into which the record will be included.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="SourceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Client Id used by the application handling the service. Valid values range
+from 1 to 2147483647 inclusive.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Name" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's name.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="TimeZone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable support for time zones option is enabled for the service.
+Id of the default time zone for the record.
+The time zone must have been added to the service, otherwise an error occurs
+and the record is not inserted.
+If this parameter contains an empty string, the service default time zone is
+assigned to the record.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Status" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Record initial status:
+1: Record not scheduled (call as initial).
+2: Record scheduled to a set date and time.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Phone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's phone number.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="PhoneTimeZone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable support for time zones option is enabled for the service.
+Id of the time zone for the contact's phone number.
+If the value of the AutomaticTimeZoneDetection parameter is set to True, the
+time zone will be automatically assigned according to the contact's phone
+prefix using the area codes defined in the system.
+The time zone cannot be assigned to the phone if it is not added to the
+outbound service. In that case the time zone specified in the TimeZone
+parameter will be used.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AlternativePhones" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable alternative phone numbers option is enabled for the service.
+The number of phone nos. that will be processed depends on the value set for
+the Alternative phone numbers to manage option.
+Contact's alternative phone numbers separated by commas.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AlternativePhoneDescriptions" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable alternative phone numbers option is enabled for the service.
+The number of phone nos. that will be processed depends on the value set for
+the Alternative phone numbers to manage option.
+Ids of the descriptions associated with each alternative phone number
+separated by commas.
+All the alternative phone numbers must have a valid phone description that
+has been added to the outbound service, otherwise an error occurs and the
+record is not inserted.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AlternativePhoneTimeZones" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable alternative phone numbers and Enable support for time zones
+options are enabled for the service.
+The number of phone nos. that will be processed depends on the value set for
+the Alternative phone numbers to manage option.
+Ids of the time zones associated with each alternative phone number separated
+by commas.
+If the value of the AutomaticTimeZoneDetection parameter is set to True, the
+time zone will be automatically assigned according to each alternative phone
+prefix using the area codes defined in the system.
+The time zone cannot be assigned to the phone if it is not added to the
+outbound service. In that case the time zone specified in the TimeZone
+parameter will be used.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ScheduleDate" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>
+                  Date and time for the scheduling. Only if the Status parameter is set to 2.
+If the support for time zones is enabled for the service, the scheduled date
+and time will match the date and time of the time zone that is specified in the
+PhoneTimeZone parameter.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="CapturingAgent" type="xs:long">
+              <xs:annotation>
+                <xs:documentation>
+                  Capturing agent login.
+If the value is 0, the outbound record is not captured by any agent.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Priority" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Record priority.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Comments" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Record comments.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AutomaticTimeZoneDetection" type="xs:boolean">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable support for time zones and Enable automatic time zones by
+phone prefix options are enabled for the service.
+Indicates whether the automatic time zone detection will be performed according
+to the phone prefix and using the area codes defined in the system.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___InsertOutboundRecord3Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___InsertOutboundRecord4">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service for which the record will be inserted.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="LoadId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the load into which the record will be included.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="SourceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Client Id used by the application handling the service. Valid values range
+from 1 to 2147483647 inclusive.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Name" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's name.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="TimeZone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable support for time zones option is enabled for the service.
+Id of the default time zone for the record.
+The time zone must have been added to the service, otherwise an error occurs
+and the record is not inserted.
+If this parameter contains an empty string, the service default time zone is
+assigned to the record.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Status" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Record initial status:
+1: Record not scheduled (call as initial).
+2: Record scheduled to a set date and time.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Phone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's phone number.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="PhoneTimeZone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable support for time zones option is enabled for the service.
+Id of the time zone for the contact's phone number.
+If the value of the AutomaticTimeZoneDetection parameter is set to True, the
+time zone will be automatically assigned according to the contact's phone
+prefix using the area codes defined in the system.
+The time zone cannot be assigned to the phone if it is not added to the
+outbound service. In that case the time zone specified in the TimeZone
+parameter will be used.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AlternativePhones" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable alternative phone numbers option is enabled for the service.
+The number of phone nos. that will be processed depends on the value set for
+the Alternative phone numbers to manage option.
+Contact's alternative phone numbers separated by commas.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AlternativePhoneDescriptions" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable alternative phone numbers option is enabled for the service.
+The number of phone nos. that will be processed depends on the value set for
+the Alternative phone numbers to manage option.
+Ids of the descriptions associated with each alternative phone number
+separated by commas.
+All the alternative phone numbers must have a valid phone description that
+has been added to the outbound service, otherwise an error occurs and the
+record is not inserted.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AlternativePhoneTimeZones" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable alternative phone numbers and Enable support for time zones
+options are enabled for the service.
+The number of phone nos. that will be processed depends on the value set for
+the Alternative phone numbers to manage option.
+Ids of the time zones associated with each alternative phone number separated
+by commas.
+If the value of the AutomaticTimeZoneDetection parameter is set to True, the
+time zone will be automatically assigned according to each alternative phone
+prefix using the area codes defined in the system.
+The time zone cannot be assigned to the phone if it is not added to the
+outbound service. In that case the time zone specified in the TimeZone
+parameter will be used.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ScheduleDate" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>
+                  Date and time for the scheduling. Only if the Status parameter is set to 2.
+If the support for time zones is enabled for the service, the scheduled date
+and time will match the date and time of the time zone that is specified in the
+PhoneTimeZone parameter.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="CapturingAgent" type="xs:long">
+              <xs:annotation>
+                <xs:documentation>
+                  Capturing agent login.
+If the value is 0, the outbound record is not captured by any agent.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Priority" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Record priority.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Comments" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Record comments.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="CustomData1" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="CustomData2" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="CustomData3" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="CallerId" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="CallerName" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="AutomaticTimeZoneDetection" type="xs:boolean">
+              <xs:annotation>
+                <xs:documentation>
+                  Only if the Enable support for time zones and Enable automatic time zones by
+phone prefix options are enabled for the service.
+Indicates whether the automatic time zone detection will be performed according
+to the phone prefix and using the area codes defined in the system.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___InsertOutboundRecord4Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RefreshService">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service that the information will be refreshed for.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RefreshServiceResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___ReloadOutboundQueues">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service that the buffers will be reloaded for.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___ReloadOutboundQueuesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RequestOutboundACDCall">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ALoginId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id (login) of the agent that requests the new manual outbound ACD contact.
+The agent that the new contact is requested for must be currently connected to
+the outbound service.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Service that the new contact will be requested from.
+The support for manual outbound ACD calls must be enabled for the service.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="APhone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's phone number.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AName" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's name.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AScheduleDate" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>
+                  Date and time to schedule the contact.
+Specifying a a date and time earlier than the current date and time in
+Presence Server causes to make the manual outbound ACD call immediately.
+Otherwise the call is captured for the agent at the scheduled date and time.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AComments" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's comments.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RequestOutboundACDCallResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RequestOutboundACDCall2">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="ALoginId" type="xs:long">
+              <xs:annotation>
+                <xs:documentation>
+                  Id (login) of the agent that requests the new manual outbound ACD contact.
+The agent that the new contact is requested for must be currently connected to
+the outbound service.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Service that the new contact will be requested from.
+The support for manual outbound ACD calls must be enabled for the service.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="APhone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's phone number.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AName" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's name.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AScheduleDate" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>
+                  Date and time to schedule the contact.
+Specifying a a date and time earlier than the current date and time in
+Presence Server causes to make the manual outbound ACD call immediately.
+Otherwise the call is captured for the agent at the scheduled date and time.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="AComments" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's comments.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RequestOutboundACDCall2Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RequestOutboundACDCall3">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="LoginId" type="xs:long">
+              <xs:annotation>
+                <xs:documentation>
+                  Id (login) of the agent that requests the new manual outbound ACD contact.
+The agent that the new contact is requested for must be currently connected to
+the outbound service.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Service that the new contact will be requested from.
+The support for manual outbound ACD calls must be enabled for the service.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="SourceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Client Id used by the application handling the service.
+Valid values range from 1 to 2147483647 inclusive.
+If the value for this parameter is set to 0, the client ID will be
+automatically assigned by the Presence system.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Phone" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's phone number.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Name" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's name.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ScheduleDate" type="xs:dateTime">
+              <xs:annotation>
+                <xs:documentation>
+                  Date and time to schedule the contact.
+Specifying a a date and time earlier than the current date and time in
+Presence Server causes to make the manual outbound ACD call immediately.
+Otherwise the call is captured for the agent at the scheduled date and time.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="Comments" type="xs:string">
+              <xs:annotation>
+                <xs:documentation>
+                  Contact's comments.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RequestOutboundACDCall3Response">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___Sum">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="A" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  First integer value.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="B" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Second integer value.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___SumResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___UnloadOutboundRecord">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="AServiceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the service that the record will be unloaded from.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ALoadId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Id of the load where the record will be searched for.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="1" maxOccurs="1" name="ASourceId" type="xs:int">
+              <xs:annotation>
+                <xs:documentation>
+                  Source Id used by the application managing the service where the record that
+will be unloaded is.
+                  </xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___UnloadOutboundRecordResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PcowsService___RefreshTracers">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="PcowsService___RefreshTracersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="Result" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="PcowsService___AddCallDataRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___AddCallData" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___AddCallDataResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___AddCallDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___GetCallDataRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___GetCallData" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___GetCallDataResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___GetCallDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___GetErrorMessageRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___GetErrorMessage" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___GetErrorMessageResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___GetErrorMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___GetServerTimeRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___GetServerTime" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___GetServerTimeResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___GetServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___InsertOutboundRecordRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___InsertOutboundRecord" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___InsertOutboundRecordResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___InsertOutboundRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___InsertOutboundRecord2Request">
+    <wsdl:part name="parameters" element="tns:PcowsService___InsertOutboundRecord2" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___InsertOutboundRecord2Response">
+    <wsdl:part name="parameters" element="tns:PcowsService___InsertOutboundRecord2Response" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___InsertOutboundRecord3Request">
+    <wsdl:part name="parameters" element="tns:PcowsService___InsertOutboundRecord3" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___InsertOutboundRecord3Response">
+    <wsdl:part name="parameters" element="tns:PcowsService___InsertOutboundRecord3Response" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___InsertOutboundRecord4Request">
+    <wsdl:part name="parameters" element="tns:PcowsService___InsertOutboundRecord4" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___InsertOutboundRecord4Response">
+    <wsdl:part name="parameters" element="tns:PcowsService___InsertOutboundRecord4Response" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RefreshServiceRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___RefreshService" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RefreshServiceResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___RefreshServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___ReloadOutboundQueuesRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___ReloadOutboundQueues" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___ReloadOutboundQueuesResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___ReloadOutboundQueuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RequestOutboundACDCallRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___RequestOutboundACDCall" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RequestOutboundACDCallResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___RequestOutboundACDCallResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RequestOutboundACDCall2Request">
+    <wsdl:part name="parameters" element="tns:PcowsService___RequestOutboundACDCall2" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RequestOutboundACDCall2Response">
+    <wsdl:part name="parameters" element="tns:PcowsService___RequestOutboundACDCall2Response" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RequestOutboundACDCall3Request">
+    <wsdl:part name="parameters" element="tns:PcowsService___RequestOutboundACDCall3" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RequestOutboundACDCall3Response">
+    <wsdl:part name="parameters" element="tns:PcowsService___RequestOutboundACDCall3Response" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___SumRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___Sum" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___SumResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___SumResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___UnloadOutboundRecordRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___UnloadOutboundRecord" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___UnloadOutboundRecordResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___UnloadOutboundRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RefreshTracersRequest">
+    <wsdl:part name="parameters" element="tns:PcowsService___RefreshTracers" />
+  </wsdl:message>
+  <wsdl:message name="PcowsService___RefreshTracersResponse">
+    <wsdl:part name="parameters" element="tns:PcowsService___RefreshTracersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PcowsService">
+    <wsdl:operation name="AddCallData">
+      <wsdl:documentation>
+      Adds data to a contact from its call identifier ID (CallId). This information
+will be associated with the contact throughout all of its handling process.
+This function is used, for example, to implement voice and data transfers.
+
+Return value: When the returned value is &lt;0, the data could not be added to the
+contact. If the value is 0, the data could be added.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___AddCallDataRequest" />
+      <wsdl:output message="tns:PcowsService___AddCallDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCallData">
+      <wsdl:documentation>
+      Gets the value of a variable attached to the contact from its
+call identifier (CallId).
+
+Return value: When the returned value is &lt;0, the call data could not be
+retrieved or the variable to be retrieved does not exist. If the value is 0,
+the variable exists and the data could be retrieved.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___GetCallDataRequest" />
+      <wsdl:output message="tns:PcowsService___GetCallDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorMessage">
+      <wsdl:documentation>
+      Gets the error message from its code.
+
+Return value: Error message associated with the code.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___GetErrorMessageRequest" />
+      <wsdl:output message="tns:PcowsService___GetErrorMessageResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerTime">
+      <wsdl:documentation>
+      Gets the current date and time of the computer where Presence Server
+Web Services is installed.
+
+Return value: Date and time of the computer where Presence Server Web Services
+is installed.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___GetServerTimeRequest" />
+      <wsdl:output message="tns:PcowsService___GetServerTimeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutboundRecord">
+      <wsdl:documentation>
+      Deprecated. Refer to InsertOutboundRecord4.
+
+Inserts a new outbound record into a service.
+
+Return value: When the returned value is &lt;0, a new record could not be inserted
+into an outbound service. If the value is 0, the record could be successfully
+inserted.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___InsertOutboundRecordRequest" />
+      <wsdl:output message="tns:PcowsService___InsertOutboundRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutboundRecord2">
+      <wsdl:documentation>
+      Deprecated. Refer to InsertOutboundRecord4.
+
+Inserts a new outbound record into a service.
+
+Return value: When the returned value is &lt;0, a new record could not be inserted
+into an outbound service. If the value is 0, the record could be successfully
+inserted.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___InsertOutboundRecord2Request" />
+      <wsdl:output message="tns:PcowsService___InsertOutboundRecord2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutboundRecord3">
+      <wsdl:documentation>
+      Deprecated. Refer to InsertOutboundRecord4.
+
+Inserts a new outbound record into a service.
+
+Return value: When the returned value is &lt;0, a new record could not be inserted
+into an outbound service. If the value is 0, the record could be successfully
+inserted.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___InsertOutboundRecord3Request" />
+      <wsdl:output message="tns:PcowsService___InsertOutboundRecord3Response" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutboundRecord4">
+      <wsdl:documentation>
+      Inserts a new outbound record into a service.
+
+Return value: When the returned value is &lt;0, a new record could not be inserted
+into an outbound service. If the value is 0, the record could be successfully
+inserted.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___InsertOutboundRecord4Request" />
+      <wsdl:output message="tns:PcowsService___InsertOutboundRecord4Response" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshService">
+      <wsdl:documentation>
+      Refreshes in Presence Server all the information about an enabled service using
+the current information found in the database.
+
+Return value: When the returned value is &lt;0, the service could not be refreshed.
+If the value is 0, the service has been successfully refreshed.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___RefreshServiceRequest" />
+      <wsdl:output message="tns:PcowsService___RefreshServiceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ReloadOutboundQueues">
+      <wsdl:documentation>
+      Reloads the buffers of an outbound service that Presence Server manages in
+memory.
+
+Return value: When the returned value is &lt;0, the buffers of the outbound service
+could not be reloaded. If the value is 0, the buffers of the outbound service
+have been successfully reloaded.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___ReloadOutboundQueuesRequest" />
+      <wsdl:output message="tns:PcowsService___ReloadOutboundQueuesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestOutboundACDCall">
+      <wsdl:documentation>
+      Deprecated. Refer to RequestOutboundACDCall3.
+
+Requests a new manual outbound ACD contact for an agent in a particular service.
+
+Return value: When the returned value is &lt;0, the new manual outbound ACD contact
+could not be requested for the agent. If the value is 0, the new manual
+outbound ACD contact has been successfully requested.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___RequestOutboundACDCallRequest" />
+      <wsdl:output message="tns:PcowsService___RequestOutboundACDCallResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestOutboundACDCall2">
+      <wsdl:documentation>
+      Deprecated. Refer to RequestOutboundACDCall3.
+
+Requests a new manual outbound ACD contact for an agent in a particular service.
+
+Return value: When the returned value is &lt;0, the new manual outbound ACD contact
+could not be requested for the agent. If the value is 0, the new manual
+outbound ACD contact has been successfully requested.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___RequestOutboundACDCall2Request" />
+      <wsdl:output message="tns:PcowsService___RequestOutboundACDCall2Response" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestOutboundACDCall3">
+      <wsdl:documentation>
+      Requests a new manual outbound ACD contact for an agent in a particular service.
+
+Return value: When the returned value is &lt;0, the new manual outbound ACD contact
+could not be requested for the agent. If the value is 0, the new manual
+outbound ACD contact has been successfully requested.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___RequestOutboundACDCall3Request" />
+      <wsdl:output message="tns:PcowsService___RequestOutboundACDCall3Response" />
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <wsdl:documentation>
+      Adds two integer values and returns the result of the sum.
+This method is commonly used to verify that Presence Server Web Services has
+been properly installed.
+
+Return value: Returns the result of adding the two values.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___SumRequest" />
+      <wsdl:output message="tns:PcowsService___SumResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UnloadOutboundRecord">
+      <wsdl:documentation>
+      Unloads an outbound record from a service.
+
+Return value: When the returned value is &lt;0, the record could not be unloaded.
+If the value is &gt;0, the number of outbound records that have been unloaded is
+indicated.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___UnloadOutboundRecordRequest" />
+      <wsdl:output message="tns:PcowsService___UnloadOutboundRecordResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshTracers">
+      <wsdl:documentation>
+      Refreshes the configuration values of the tracing objects.
+      </wsdl:documentation>
+      <wsdl:input message="tns:PcowsService___RefreshTracersRequest" />
+      <wsdl:output message="tns:PcowsService___RefreshTracersResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PcowsServiceBinding" type="tns:PcowsService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddCallData">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#AddCallData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCallData">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#GetCallData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErrorMessage">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#GetErrorMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerTime">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#GetServerTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutboundRecord">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#InsertOutboundRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutboundRecord2">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#InsertOutboundRecord2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutboundRecord3">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#InsertOutboundRecord3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOutboundRecord4">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#InsertOutboundRecord4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshService">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#RefreshService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReloadOutboundQueues">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#ReloadOutboundQueues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestOutboundACDCall">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#RequestOutboundACDCall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestOutboundACDCall2">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#RequestOutboundACDCall2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestOutboundACDCall3">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#RequestOutboundACDCall3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sum">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#Sum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnloadOutboundRecord">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#UnloadOutboundRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshTracers">
+      <soap:operation soapAction="urn:PcowsLibrary-PcowsService#RefreshTracers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PcowsService">
+    <xs:annotation>
+      <xs:documentation>
+         Service PcowsService. This service has been automatically generated using the RODL template you can find in the Templates directory.
+         </xs:documentation>
+    </xs:annotation>
+    <wsdl:port name="PcowsServicePort" binding="tns:PcowsServiceBinding">
+      <soap:address location="https://pcoserverws.logytechmobile.com/pcoserverws/pcoserverws.dll/SOAP?service=PcowsService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

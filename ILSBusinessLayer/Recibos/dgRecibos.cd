@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ILSBusinessLayer.Recibos.DetalleOrdenCompra">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gGAAASUAQAABAAEAREAAICUAQhARAAAIAIjQIAAAAAI=</HashCode>
+      <FileName>Recibos\DetalleOrdenCompra.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.DetallePallet" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAgSEAAAQAAEEAAABAAAEAAoAQAAAAAABAgCAAAAA=</HashCode>
+      <FileName>Recibos\DetallePallet.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.DistrubucionPorAlmacen" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAQAUAQAQAAEAAAAAAAgUAAgAAAAAAAAAQACIABAA=</HashCode>
+      <FileName>Recibos\DistrubucionPorAlmacen.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.FacturaGuia">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>qACAAAECAMAAAQAAAAAAIAMAAgAABAAAAAgAAABAAAA=</HashCode>
+      <FileName>Recibos\FacturaGuia.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.Incoterm" Collapsed="true">
+    <Position X="1.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAQAAEAEAAAAQCEBAAAAAAAAAQAAAAAIAAg=</HashCode>
+      <FileName>Recibos\Incoterm.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.InfoFactura">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAABAUASAgAAQAAAAAgIgcAAgABAAAIIAgQAAoAEAg=</HashCode>
+      <FileName>Recibos\InfoFactura.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.InfoGuia">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAJAQARIggQEAAAAIAIAUAAMABIAAoAAAQAAgAAAI=</HashCode>
+      <FileName>Recibos\InfoGuia.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.Modulo" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAQCAEAAAAAAgAEACAAAAAAAAAAAAAIAAAg=</HashCode>
+      <FileName>Recibos\Modulo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.ModuloTipoProducto" Collapsed="true">
+    <Position X="1.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAACQEAAAAAAAAEACARAAAAACAAASAAAABA=</HashCode>
+      <FileName>Recibos\ModuloTipoProducto.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.Moneda" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAQAAEAAAAAIgAEAAAAACAAAAAAAAAIAAAg=</HashCode>
+      <FileName>Recibos\Moneda.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.OrdenCompra">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIQgB0AAAEAAIYCEAAABBCAAIAACARAgJAhI=</HashCode>
+      <FileName>Recibos\OrdenCompra.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.OrdenesBodegaje" Collapsed="true">
+    <Position X="1" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IMABhCkAIACACEUAAAAAAAEACgAIAAAECQAAAYDAAAg=</HashCode>
+      <FileName>Recibos\OrdenesBodegaje.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.OrdenRecepcion" Collapsed="true">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAEAAQwAUAAIAAAIIAEEAFBBAAQIEQBAQIgAAhI=</HashCode>
+      <FileName>Recibos\OrdenRecepcion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.PalletRecepcion" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAQiAEAIADAEAAAAgAoICESAEABAAAIAAAAACAhAgI=</HashCode>
+      <FileName>Recibos\PalletRecepcion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.TipoRecepcion" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAEAAAAIAAFAAABAAQAAAAAAAAAAAg=</HashCode>
+      <FileName>Recibos\TipoRecepcion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Recibos.TipoUnidad" Collapsed="true">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAEEAAAAIAABAAABAAAAAABAAAAAAAg=</HashCode>
+      <FileName>Recibos\TipoUnidad.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

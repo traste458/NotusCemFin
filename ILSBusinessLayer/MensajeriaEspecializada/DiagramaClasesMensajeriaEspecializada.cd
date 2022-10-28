@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ILSBusinessLayer.ServicioMensajeria">
+    <Position X="9" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQ=</HashCode>
+      <FileName>MensajeriaEspecializada\ServicioMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.PedidoMensajeria">
+    <Position X="6.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQ=</HashCode>
+      <FileName>MensajeriaEspecializada\PedidoMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.PickingMensajeria">
+    <Position X="6.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQ=</HashCode>
+      <FileName>MensajeriaEspecializada\PickingMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.DespachoMensajeria">
+    <Position X="6.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQ=</HashCode>
+      <FileName>MensajeriaEspecializada\DespachoMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.NovedadServicioMensajeria">
+    <Position X="2.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQ=</HashCode>
+      <FileName>MensajeriaEspecializada\NovedadServicioMensajeria.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.NovedadServicioMensajeriaColeccion">
+    <Position X="2.5" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MensajeriaEspecializada\NovedadServicioMensajeriaColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.BloqueoInventario">
+    <Position X="13.25" Y="0.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AKAAAAQAwAiDAABAABACACQKAoAAAQAIBICQAQigQAY=</HashCode>
+      <FileName>Inventario\BloqueoInventario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.ServicioMensajeriaTipoServicio">
+    <Position X="9" Y="3.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAQ=</HashCode>
+      <FileName>MensajeriaEspecializada\ServicioMensajeriaTipoServicio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.ServicioMensajeriaTipoServicioColeccion">
+    <Position X="9" Y="2.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MensajeriaEspecializada\ServicioMensajeriaTipoServicioColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.InventarioBodegaPrincipalColeccion" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AkAAgKAQIAsAAQZSAEFDMQAAAJAAwAKADAAICYiABgA=</HashCode>
+      <FileName>Inventario\InventarioBodegaPrincipalColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.Inventario.InventarioBodegaSateliteColeccion" Collapsed="true">
+    <Position X="18.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AkAAgKAQIAsAAQZSAEFDMQAAAJAAwAKADAAICYiABgA=</HashCode>
+      <FileName>Inventario\InventarioBodegaSateliteColeccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

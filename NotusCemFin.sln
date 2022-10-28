@@ -1,0 +1,175 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ILSBusinessLayer", "ILSBusinessLayer\ILSBusinessLayer.vbproj", "{DD45B418-ACCD-466D-908A-B1FCD51422F3}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LMControlesServidor", "LMControlesServidor\LMControlesServidor.vbproj", "{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NotusCemFin", "NotusCemFin\NotusCemFin.vbproj", "{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "EncryptionClassLibrary", "EncryptionClassLibrary\EncryptionClassLibrary.vbproj", "{693142D6-C97B-42F8-80F8-4481B5BE652F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LMDataAccessLayer", "LMDataAccessLayer\LMDataAccessLayer.vbproj", "{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NotificacionEventos", "NotificacionEventos\NotificacionEventos\NotificacionEventos.vbproj", "{2516DEBC-A744-46D7-A89B-A86CE73F92AC}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LMMailSenderLibrary", "LMMailSenderLibrary\LMMailSenderLibrary\LMMailSenderLibrary.vbproj", "{31EED092-6E89-4677-B409-24E299F778F5}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ZebraPrinting", "ZebraPrinting\ZebraPrinting\ZebraPrinting.vbproj", "{A7598CD8-DBCC-45A3-A529-630693FF76E0}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LMWebServiceSyncMonitorBusinessLayer", "LMWebServiceSyncMonitorBusinessLayer\LMWebServiceSyncMonitorBusinessLayer.vbproj", "{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DD45B418-ACCD-466D-908A-B1FCD51422F3}.Release|x86.ActiveCfg = Release|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0F11AE07-D9CB-4EE1-91B0-1E4BEAF414D0}.Release|x86.ActiveCfg = Release|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6F5810CD-5D77-4B70-B6E8-7EB7C8979B07}.Release|x86.ActiveCfg = Release|Any CPU
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Debug|x86.ActiveCfg = Debug|x86
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Debug|x86.Build.0 = Debug|x86
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Release|x86.ActiveCfg = Release|x86
+		{693142D6-C97B-42F8-80F8-4481B5BE652F}.Release|x86.Build.0 = Release|x86
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Debug|x86.ActiveCfg = Debug|x86
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Debug|x86.Build.0 = Debug|x86
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Release|Mixed Platforms.Build.0 = Release|x86
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Release|x86.ActiveCfg = Release|x86
+		{0EFBDBDB-3186-4E90-B167-F794D9F6D1DB}.Release|x86.Build.0 = Release|x86
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Debug|x86.ActiveCfg = Debug|x86
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Debug|x86.Build.0 = Debug|x86
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Release|x86.ActiveCfg = Release|x86
+		{2516DEBC-A744-46D7-A89B-A86CE73F92AC}.Release|x86.Build.0 = Release|x86
+		{31EED092-6E89-4677-B409-24E299F778F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31EED092-6E89-4677-B409-24E299F778F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31EED092-6E89-4677-B409-24E299F778F5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{31EED092-6E89-4677-B409-24E299F778F5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{31EED092-6E89-4677-B409-24E299F778F5}.Debug|x86.ActiveCfg = Debug|x86
+		{31EED092-6E89-4677-B409-24E299F778F5}.Debug|x86.Build.0 = Debug|x86
+		{31EED092-6E89-4677-B409-24E299F778F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31EED092-6E89-4677-B409-24E299F778F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31EED092-6E89-4677-B409-24E299F778F5}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{31EED092-6E89-4677-B409-24E299F778F5}.Release|Mixed Platforms.Build.0 = Release|x86
+		{31EED092-6E89-4677-B409-24E299F778F5}.Release|x86.ActiveCfg = Release|x86
+		{31EED092-6E89-4677-B409-24E299F778F5}.Release|x86.Build.0 = Release|x86
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Debug|x86.ActiveCfg = Debug|x86
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Debug|x86.Build.0 = Debug|x86
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Release|Mixed Platforms.Build.0 = Release|x86
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Release|x86.ActiveCfg = Release|x86
+		{A7598CD8-DBCC-45A3-A529-630693FF76E0}.Release|x86.Build.0 = Release|x86
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Debug|x86.Build.0 = Debug|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Release|x86.ActiveCfg = Release|Any CPU
+		{A7664DD4-D258-4D32-A907-FDDEB4BAFE8C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17D5084B-2BF7-455D-9642-B4C2DE535E6E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://colbogsa028:8080/tfs/logytechmobile
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ILSBusinessLayer\\ILSBusinessLayer.vbproj
+		SccProjectName1 = ILSBusinessLayer
+		SccLocalPath1 = ILSBusinessLayer
+		SccProjectUniqueName2 = LMControlesServidor\\LMControlesServidor.vbproj
+		SccProjectName2 = LMControlesServidor
+		SccLocalPath2 = LMControlesServidor
+		SccProjectUniqueName3 = NotusCemFin\\NotusCemFin.vbproj
+		SccProjectName3 = NotusCemFin
+		SccLocalPath3 = NotusCemFin
+		SccProjectUniqueName4 = ZebraPrinting\\ZebraPrinting\\ZebraPrinting.vbproj
+		SccProjectName4 = ZebraPrinting/ZebraPrinting
+		SccLocalPath4 = ZebraPrinting\\ZebraPrinting
+		SccProjectUniqueName5 = EncryptionClassLibrary\\EncryptionClassLibrary.vbproj
+		SccProjectName5 = EncryptionClassLibrary
+		SccLocalPath5 = EncryptionClassLibrary
+		SccProjectUniqueName6 = LMDataAccessLayer\\LMDataAccessLayer.vbproj
+		SccProjectName6 = LMDataAccessLayer
+		SccLocalPath6 = LMDataAccessLayer
+		SccProjectUniqueName7 = LMMailSenderLibrary\\LMMailSenderLibrary\\LMMailSenderLibrary.vbproj
+		SccProjectName7 = LMMailSenderLibrary/LMMailSenderLibrary
+		SccLocalPath7 = LMMailSenderLibrary\\LMMailSenderLibrary
+		SccProjectUniqueName8 = LMWebServiceSyncMonitorBusinessLayer\\LMWebServiceSyncMonitorBusinessLayer.vbproj
+		SccProjectName8 = LMWebServiceSyncMonitorBusinessLayer
+		SccLocalPath8 = LMWebServiceSyncMonitorBusinessLayer
+		SccProjectUniqueName9 = NotificacionEventos\\NotificacionEventos\\NotificacionEventos.vbproj
+		SccProjectName9 = NotificacionEventos/NotificacionEventos
+		SccLocalPath9 = NotificacionEventos\\NotificacionEventos
+	EndGlobalSection
+EndGlobal

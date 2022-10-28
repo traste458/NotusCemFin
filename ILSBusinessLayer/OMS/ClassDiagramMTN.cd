@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ILSBusinessLayer.OrdenEnvioNacionalizacion">
+    <Position X="3" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAACIEgAEMAAAAAAACEAAAAABAAIQQUAAAgBKgI=</HashCode>
+      <FileName>OMS\OrdenEnvioNacionalizacion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.OMS.EnvioNacionalizacionDetalle">
+    <Position X="5.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>ACAAAIAAAASAAMAAAAAAAAEAAAAABAAAAwAAAAAAAAA=</HashCode>
+      <FileName>OMS\EnvioNacionalizacionDetalle.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.OMS.EnvioNacionalizacionSerial">
+    <Position X="8" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAIIAAAQAAAAAAAAAAAEAABEBAACAAoASAAAAAAA=</HashCode>
+      <FileName>OMS\EnvioNacionalizacionSerial.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ILSBusinessLayer.OMS.OrdenTermosellado">
+    <Position X="0.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAIAgAEEAAAAAAAAEAABABAACoQAEQAAgBKgA=</HashCode>
+      <FileName>OMS\OrdenTermosellado.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
